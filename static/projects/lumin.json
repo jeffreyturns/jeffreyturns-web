@@ -1,0 +1,78 @@
+{
+    "title": "Lumin",
+    "description": "Lumin is a wallpaper app that uses Material Design to provide you with a variety of wallpapers to choose from.",
+    "header": "images/lumin/header.png",
+    "isLightHeader": true,
+    "sections": [
+        {
+            "title": "",
+            "description": "",
+            "mockup": "images/lumin/preview.png"
+        },
+        {
+            "title": "About Lumin",
+            "description": "The Lumin app provides an online wallpaper selection with many collections of the best wallpapers to customize the look of your device.",
+            "mockup": "images/lumin/mockups.png"
+        },
+        {
+            "title": "Visual theme",
+            "description": "Sharp corners is a visual theme in an application that is used in various components and elements. They reflect the shape of the logo.",
+            "mockup": "images/lumin/visual.png"
+        },
+        {
+            "title": "Interaction",
+            "description": "Interaction with the wallpaper occurs through overlapping sheets that provide all the information and actions you need.",
+            "mockup": "images/lumin/interaction.png"
+        },
+        {
+            "title": "Architecture",
+            "description": "The Lumin application architecture has a directory structure. The catalog contains wallpapers and collections. Also, the wallpapers are grouped into collections of similar wallpapers.",
+            "mockup": "images/lumin/architecture.png"
+        },
+        {
+            "title": "Layout",
+            "description": "Lumin uses a grid layout for content with bottom navigation for sections.",
+            "mockup": "images/lumin/layout.png"
+        },
+        {
+            "title": "Color",
+            "description": "Lumin's color palette is based on white with a blue color that highlights the actions the user can take. Surface color fils the overlapping sheets. The main content is on white blue, and the black  is used for typography and iconography.",
+            "mockup": "images/lumin/color_1.png"
+        },
+        {
+            "title": "",
+            "description": "",
+            "mockup": "images/lumin/color_2.png"
+        },
+        {
+            "title": "Typography",
+            "description": "All items in the type scale use Rubik as the typeface, including Manrope Bold, Semibold, and Medium.",
+            "mockup": "images/lumin/typography.png"
+        },
+        {
+            "title": "Iconography",
+            "description": "Lumin uses Material Design’s and sharp iconography system. These icons are constructed to remain legible and clear at small sizes.",
+            "mockup": "images/lumin/iconography.png"
+        },
+        {
+            "title": "Shape",
+            "description": "Lumin uses sharp shape for Medium and Large components. Small componets, like toolbar icons use full round shape.",
+            "mockup": "images/lumin/shape_1.png"
+        },
+        {
+            "title": "",
+            "description": "",
+            "mockup": "images/lumin/shape_2.png"
+        },
+        {
+            "title": "Components",
+            "description": "",
+            "mockup": "images/lumin/components.png"
+        },
+        {
+            "title": "Motion",
+            "description": "Lumin’s motion design uses all material motion, like animated icons for bottom navigation, toolbar and sorting panel. For bottom navigation content, Lumin use Fade through, for navigation in fragments - shared axis, for list sorting - fade animations.  ",
+            "mockup": "images/lumin/motion.png"
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "title": "Debuggy",
+    "description": "Application for enable android debug bride over network with some additional features.",
+    "header": "images/debuggy/header.png",
+    "isLightHeader": false,
+    "sections": [
+        {
+            "title": "",
+            "description": "",
+            "mockup": "images/debuggy/preview.png"
+        },
+        {
+            "title": "About Debuggy",
+            "description": "The Debuggy’s app provides to rooted user easy tool to enable ADB over network with just a few clicks, and have some advanced tools like enable ADB after device start, custom port etc.",
+            "mockup": "images/debuggy/mockups.png"
+        },
+        {
+            "title": "Visual theme",
+            "description": "Debuggy’s follow Material You guidelines, like Android 12 components, it have round corners - a visual theme in application that is used in various components and elements. They reflect the shape of the logo.",
+            "mockup": "images/debuggy/visual.png"
+        },
+        {
+            "title": "Interaction",
+            "description": "Interaction with the infomation occurs through overlapping sheets that provide all the information and actions you need.",
+            "mockup": "images/debuggy/interaction.png"
+        },
+        {
+            "title": "Architecture",
+            "description": "The Debuggy’s application architecture has a list structure like setting app. The lists contains settings and useful information for user.",
+            "mockup": "images/debuggy/architecture.png"
+        },
+        {
+            "title": "Layout",
+            "description": "Debuggy’s use setting-like structure for content with group by headers.",
+            "mockup": "images/debuggy/layout.png"
+        },
+        {
+            "title": "Color",
+            "description": "Debuggy’s color palette based on system color engine introdused on android 12, for older versions it use paleltte based on dark-green shades for surfaces and light-green shades for important elements.",
+            "mockup": "images/debuggy/color_1.png"
+        },
+        {
+            "title": "",
+            "description": "",
+            "mockup": "images/debuggy/color_2.png"
+        },
+        {
+            "title": "Typography",
+            "description": "All items in the type scale use Roboto as the typeface.",
+            "mockup": "images/debuggy/typography.png"
+        },
+        {
+            "title": "Iconography",
+            "description": "Debuggy’s uses Material Design’s and round iconography system. These icons are constructed to remain legible and clear at small sizes. ",
+            "mockup": "images/debuggy/iconography.png"
+        },
+        {
+            "title": "Shape",
+            "description": "Debuggy’s uses round shape for Small, Medium and Large components.",
+            "mockup": "images/debuggy/shape_1.png"
+        },
+        {
+            "title": "",
+            "description": "",
+            "mockup": "images/debuggy/shape_2.png"
+        },
+        {
+            "title": "Components",
+            "description": "",
+            "mockup": "images/debuggy/components.png"
+        },
+        {
+            "title": "Motion",
+            "description": "Debuggy’s motion design uses shared axis motion for navigation between fragments.",
+            "mockup": "images/debuggy/motion.png"
+        }
+    ]
+}
