@@ -23,23 +23,20 @@
 </template>
 
 <script>
-    import Constants from "../../config/constants";
+    import FooterModel from "../../common/FooterModel";
 
     export default {
         data() {
             return {
                 logo_light: require("../../assets/logo/logo_light.svg"),
                 logo_dark: require("../../assets/logo/logo_dark.svg"),
-                footer: [],
             };
         },
-        created() {
-            fetch(Constants.BASE_URL + "footer" + ".json")
-                .then((response) => response.json())
-                .then((data) => (this.footer = data))
-                .catch((err) => {
-                    console.log(err);
-                });
+        computed: {
+            footer: () => FooterModel.list,
+        },
+        mounted() {
+            FooterModel.getData();
         },
     };
 </script>

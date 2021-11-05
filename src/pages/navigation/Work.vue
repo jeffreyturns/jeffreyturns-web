@@ -47,6 +47,7 @@
 
 <script>
     import ProjectSection from "../../components/section/ProjectSection.vue";
+    import ProjectsModel from "../../common/ProjectsModel";
     import Constants from "../../config/constants";
 
     export default {
@@ -57,17 +58,14 @@
             return {
                 tab: null,
                 site: Constants.BASE_URL,
-                items: [],
                 tabs: ["Android", "Design", "Web"],
             };
         },
-        created() {
-            fetch(Constants.BASE_URL + "projects" + ".json")
-                .then((response) => response.json())
-                .then((data) => (this.items = data))
-                .catch((err) => {
-                    console.log(err);
-                });
+        computed: {
+            items: () => ProjectsModel.list,
         },
+        mounted() {
+            ProjectsModel.getData();
+        }
     };
 </script>
