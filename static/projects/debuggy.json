@@ -36,22 +36,17 @@
         },
         {
             "title": "Color",
-            "description": "Debuggy’s color palette based on system color engine introdused on android 12, for older versions it use paleltte based on dark-green shades for surfaces and light-green shades for important elements.",
+            "description": "Debuggy’s color palette based on system color engine introdused on android 12, for older versions it use generated paleltte based on seed.",
             "mockup": "images/debuggy/color_1.png"
         },
         {
-            "title": "",
-            "description": "",
-            "mockup": "images/debuggy/color_2.png"
-        },
-        {
             "title": "Typography",
-            "description": "All items in the type scale use Roboto as the typeface.",
+            "description": " Debuggy use standart Material 3 typescales.",
             "mockup": "images/debuggy/typography.png"
         },
         {
             "title": "Iconography",
-            "description": "Debuggy’s uses Material Design’s and round iconography system. These icons are constructed to remain legible and clear at small sizes. ",
+            "description": "Debuggy’s uses Material Design’s and round iconography system. These icons are constructed to remain legible and clear at small sizes.",
             "mockup": "images/debuggy/iconography.png"
         },
         {
