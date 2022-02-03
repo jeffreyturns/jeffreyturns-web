@@ -36,7 +36,7 @@
         },
         {
             "title": "Color",
-            "description": "Debuggy’s color palette based on system color engine introdused on android 12, for older versions it use generated paleltte based on seed.",
+            "description": "Debuggy’s color palette based on system color engine introdused on android 12, for older versions it use generated paleltte based on Material You token seed.",
             "mockup": "images/debuggy/color_1.png"
         },
         {
