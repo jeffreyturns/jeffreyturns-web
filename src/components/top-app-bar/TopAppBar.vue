@@ -59,7 +59,9 @@ function goBack(): void {
 
         <VSpacer v-if="!$vuetify.display.xs" />
 
-        <div v-if="!$vuetify.display.xs">
+        <div
+            v-if="!$vuetify.display.xs"
+            class="mx-2">
             <!-- <VBtn
                 @click="
                     () => {
@@ -91,7 +93,9 @@ function goBack(): void {
             <ThemeMenu />
         </div>
 
-        <div v-if="$vuetify.display.xs && !globalStore.showSearch">
+        <div
+            v-if="$vuetify.display.xs && !globalStore.showSearch"
+            class="mx-2">
             <VBtn
                 prepend-icon="fork_right"
                 variant="outlined"

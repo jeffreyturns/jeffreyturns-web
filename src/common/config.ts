@@ -80,15 +80,14 @@ export const components = {
             rounded: 'xl'
         }
     },
-    VMenu: {
-        VOverlay: {
-            VList: {
-                elevation: '2',
-                bgColor: 'surface-2',
-                rounded: 'lg'
-            }
-        }
-    },
+     // FIXME: Not working after vuetify beta 10 >
+    // VMenu: {
+    //     VList: {
+    //         elevation: '2',
+    //         bgColor: 'surface-2',
+    //         rounded: 'lg'
+    //     },
+    // },
     VBottomNavigation: {
         bgColor: 'surface-2',
         height: '80',

@@ -7,6 +7,8 @@ import { THEME_VALUES } from '@/common/constants';
 
 import { useTheme as useFrameworkTheme } from 'vuetify/lib/framework.mjs';
 
+import { menu as menuConfig } from '@/common/components-config';
+
 const fmTheme = useFrameworkTheme();
 
 const currentTheme = ref(toThemeEnums(getPrefTheme()));
@@ -69,7 +71,8 @@ function changeTheme(value: Theme) {
                 <span>{{ `t('tooltips.theme')` }}</span>
             </VTooltip>
         </template>
-        <VList>
+        <VDefaultsProvider :defaults="menuConfig">
+            <VList>
             <VListItem
                 v-for="(item, index) in THEME_VALUES"
                 :key="index"
@@ -79,5 +82,6 @@ function changeTheme(value: Theme) {
                 <VListItemTitle v-text="item.title" />
             </VListItem>
         </VList>
+        </VDefaultsProvider>
     </VMenu>
 </template>
