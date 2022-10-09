@@ -1,0 +1,42 @@
+@import './scss/scroll.scss';
+@import './scss/override.scss';
+
+.filled-symbol {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.outlined-symbol {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+// Animated classes
+.to-filled-symbol {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    animation: symbol-anim-start .2s linear;
+}
+.to-outlined-symbol {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    animation: symbol-anim-end .2s linear;
+}
+
+@keyframes symbol-anim-start {
+    0% {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    100% {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  }
+
+  
+@keyframes symbol-anim-end {
+    0% {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    100% {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  }
+
+.bordered {
+    border: thin solid rgb(var(--v-theme-outline)) !important;
+    border-width: 1px;
+}

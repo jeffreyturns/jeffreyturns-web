@@ -1,0 +1,12 @@
+.v-btn--variant-outlined {
+    border: thin solid rgb(var(--v-border-color)) !important;
+}
+.v-card-actions > .v-btn {
+    padding: 0 16px !important;
+}
+.v-snackbar__content {
+    color: rgb(var(--v-theme-inverse-on-surface)) !important;
+}
+.v-snackbar__wrapper {
+    background: rgb(var(--v-theme-inverse-surface)) !important;
+}
