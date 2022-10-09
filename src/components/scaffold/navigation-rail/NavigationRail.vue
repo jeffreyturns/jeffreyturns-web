@@ -65,11 +65,12 @@ function navigate(path: RouteLocationRaw): void {
 <template>
     <VNavigationDrawer
         app
+        :rail-width="80"
         :class="{ 'rounded-e-xl bg-surface-3': display.mdAndDown.value }"
         v-model="globalStore.rail"
         :rail="!display.xlAndUp.value && !display.mdAndDown.value">
         <div
-            class="ps-3"
+            class="ps-4"
             :style="styles.fullHeight">
             <VAppBarNavIcon
                 v-if="!rootDestonation() && !display.mdAndDown.value"
@@ -106,12 +107,16 @@ function navigate(path: RouteLocationRaw): void {
                         :key="i">
                         <VListItem
                             :height="railListItemHeight()"
-                            :style="baseStyles.allTransition"
+                            :style="
+                                display.xlAndUp.value || display.mdAndDown.value
+                                    ? baseStyles.allTransition
+                                    : ['justify-self: center; justify-content: center;', baseStyles.allTransition]
+                            "
                             :density="railDensity()"
                             :value="item"
                             elevation="0"
                             variant="elevated"
-                            class="bg-transparent"
+                            class="bg-transparent mx-1"
                             :class="{ 'bg-secondary-container': pathIsRoute(item.to) }"
                             :to="item.to">
                             <template
@@ -148,5 +153,10 @@ function navigate(path: RouteLocationRaw): void {
 .v-list-item__prepend > .v-icon,
 .v-list-item__append > .v-icon {
     opacity: 1 !important;
+}
+.v-list-item--density-compact.v-list-item--one-line {
+    min-height: 32px;
+    padding-top: -4px;
+    padding-bottom: -4px;
 }
 </style>
