@@ -13,11 +13,11 @@ const props = withDefaults(defineProps<ProjectViewProps>(), {
 <template>
     <div>
         {{ props.entry }}
-        <!-- <VCard height="300px">
+        <VCard height="300px">
             <VImg
                 :aspect-ratio="0.1"
                 cover
-                :src="`https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/${projectStore.list().header}`" />
-        </VCard> -->
+                :src="`https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/${entry?.header}`" />
+        </VCard>
     </div>
 </template>

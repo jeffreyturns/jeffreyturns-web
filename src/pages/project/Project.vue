@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 
 import { useRoute } from 'vue-router';
 import { useProjectStore } from '@/stores/project';
@@ -11,6 +11,10 @@ const route = useRoute();
 
 onMounted(() => {
     projectStore.fetch((route.params.name as string) ?? '');
+});
+
+onUnmounted(() => {
+    projectStore.clear();
 });
 </script>
 

@@ -34,6 +34,16 @@ export const useProjectStore = defineStore('project', () => {
         }
     });
 
+    function clear(): void {
+        state.value.project = {
+            title: 'Placeholder',
+            description: 'Placeholder',
+            header: 'Placeholder',
+            isLightHeader: true,
+            sections: []
+        };
+    }
+
     function list(): Project {
         return state.value.project;
     }
@@ -58,5 +68,5 @@ export const useProjectStore = defineStore('project', () => {
         state.value.project = data;
     }
 
-    return { state, list, isLoaded, isProjectByRequest, fetch };
+    return { state, clear, list, isLoaded, isProjectByRequest, fetch };
 });
