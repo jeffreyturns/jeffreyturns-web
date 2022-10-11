@@ -96,15 +96,15 @@ onMounted(() => {
         <VApp>
             <Scaffold>
                 // top actions
-                <template v-slot:top>
+                <template #top>
                     <TopAppBar />
                 </template>
                 // rail or drawer
-                <template v-slot:rail>
+                <template #rail>
                     <NavigationRail :isLabeled="true" />
                 </template>
                 // content or router
-                <template v-slot:content>
+                <template #content>
                     <VMain>
                         <ScrollContainer :isFluid="true">
                             <RouterView v-slot="{ Component }">
@@ -117,11 +117,11 @@ onMounted(() => {
                     </VMain>
                 </template>
                 // bottom bar or bar with fab
-                <template v-slot:bar>
+                <template #bar>
                     <NavigationBar />
                 </template>
                 // additional action
-                <template v-slot:fab>
+                <template #fab>
                     <FAB />
                 </template>
             </Scaffold>
