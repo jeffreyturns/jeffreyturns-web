@@ -80,7 +80,7 @@ export const components = {
             rounded: 'xl'
         }
     },
-     // FIXME: Not working after vuetify beta 10 >
+    // FIXME: Not working after vuetify beta 10 >
     // VMenu: {
     //     VList: {
     //         elevation: '2',

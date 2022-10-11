@@ -4,4 +4,4 @@ export const menu = {
         bgColor: 'surface-2',
         rounded: 'lg'
     }
-}
+};

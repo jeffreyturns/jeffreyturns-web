@@ -73,15 +73,15 @@ function changeTheme(value: Theme) {
         </template>
         <VDefaultsProvider :defaults="menuConfig">
             <VList>
-            <VListItem
-                v-for="(item, index) in THEME_VALUES"
-                :key="index"
-                :prepend-icon="currentTheme == item.value ? 'done' : ' '"
-                @click="changeTheme(item.value)"
-                :value="index">
-                <VListItemTitle v-text="item.title" />
-            </VListItem>
-        </VList>
+                <VListItem
+                    v-for="(item, index) in THEME_VALUES"
+                    :key="index"
+                    :prepend-icon="currentTheme == item.value ? 'done' : ' '"
+                    @click="changeTheme(item.value)"
+                    :value="index">
+                    <VListItemTitle v-text="item.title" />
+                </VListItem>
+            </VList>
         </VDefaultsProvider>
     </VMenu>
 </template>
