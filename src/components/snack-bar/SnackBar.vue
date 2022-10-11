@@ -8,8 +8,8 @@ import { SNACKBAR_DEFAULT_DURATION_MS } from '@/stores/snack';
 const snackStore = useSnackStore();
 
 const message = ref<string>(snackStore.snack?.message ?? 'Snackbar');
-const action = ref<SnackAction>(snackStore.snack?.action as SnackAction);
-// const title = ref<string>(action.value.title ?? 'Cancel');
+const action = ref<SnackAction | boolean>(snackStore.snack?.action ?? false);
+const actionTitle = ref<string>(typeof action.value != 'boolean' ? action.value.title ?? 'Cancel' : '');
 
 function calcDuration(): number {
     switch (typeof snackStore.snack?.duration) {
@@ -29,7 +29,7 @@ function calcDuration(): number {
 }
 
 function invokeAction(): void {
-    action?.value.action?.() ?? null;
+    typeof action.value != 'boolean' ? action.value.action?.() : '';
     snackStore.dismiss();
 }
 
@@ -38,7 +38,7 @@ watch(
     () => {
         message.value = snackStore.snack?.message ?? 'SnackBar';
         action.value = snackStore.snack?.action as SnackAction;
-        // title.value = action.value.title ?? 'Cancel';
+        actionTitle.value = typeof action.value != 'boolean' ? action?.value?.title ?? 'Cancel' : '';
     },
     { immediate: true }
 );
@@ -46,7 +46,7 @@ watch(
 
 <template>
     <VSnackbar
-        :timeout="calcDuration"
+        :timeout="calcDuration()"
         v-model="snackStore.isShow">
         {{ message }}
         <template
@@ -57,7 +57,7 @@ watch(
                 color="inverse-primary"
                 variant="text"
                 @click="invokeAction()">
-                {{ '' }}
+                {{ actionTitle }}
             </VBtn>
         </template>
     </VSnackbar>
