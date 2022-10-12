@@ -2,12 +2,17 @@ import { RouteRecordRaw } from 'vue-router';
 
 import HomeView from '@/pages/home/Home.vue';
 
+export enum Layout {
+    NONE = 'none',
+    COMMON = 'common'
+}
+
 export const routes: Array<RouteRecordRaw> = [
     {
         path: '/:pathMatch(.*)*',
         name: 'Not Found',
         meta: {
-            layout: 'none',
+            layout: Layout.NONE,
             title: 'Not Found',
             isRoot: false
         },

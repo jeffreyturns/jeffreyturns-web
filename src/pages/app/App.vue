@@ -9,6 +9,8 @@ import { useSnack } from '@/composables/useSnack';
 
 import { useGlobalStore } from '@/stores/global';
 
+import { Layout } from '@/router/routes';
+
 import Scaffold from '@/components/scaffold/Scaffold.vue';
 
 import NotFound from '@/pages/not-found/NotFound.vue';
@@ -47,7 +49,7 @@ watch(
     value => {
         useAppTitle(`${value.meta?.title}`);
 
-        globalStore.isNotFoundPage = inRouteRecord(value?.meta?.layout?.toString() ?? '', ['none']);
+        globalStore.isNotFoundPage = inRouteRecord(value?.meta?.layout?.toString() ?? '', [Layout.NONE]);
 
         globalStore.showSearch = inRouteRecord(value.name?.toString() || '', showSearchAtRoutes);
 
