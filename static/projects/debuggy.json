@@ -2,7 +2,6 @@
     "title": "Debuggy",
     "description": "Application for enable android debug bride over network with some additional features.",
     "header": "images/debuggy/header.png",
-    "isLightHeader": false,
     "sections": [
         {
             "title": "",
