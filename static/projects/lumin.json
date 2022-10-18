@@ -2,6 +2,12 @@
     "title": "Lumin",
     "description": "Lumin is a wallpaper app that uses Material Design to provide you with a variety of wallpapers to choose from.",
     "header": "images/lumin/header.png",
+    "download": [
+        {
+            "title": "GitHub",
+            "url": "https://github.com/Jeffrey01596/Debuggy"
+        }
+    ],
     "sections": [
         {
             "title": "",
