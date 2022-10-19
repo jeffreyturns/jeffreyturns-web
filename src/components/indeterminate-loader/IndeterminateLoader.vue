@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { CSSProperties } from 'vue';
 import { useGlobalStore } from '@/stores/global';
+
+import * as styles from './indeterminate-loader.css';
 
 interface IndeterminateLoaderProps {
     isRounded?: boolean;
@@ -12,11 +13,6 @@ const props = withDefaults(defineProps<IndeterminateLoaderProps>(), {
     indicatorColor: 'primary'
 });
 
-const loader: CSSProperties = {
-    position: 'absolute',
-    bottom: '0px'
-};
-
 const globalStore = useGlobalStore();
 </script>
 
@@ -25,7 +21,7 @@ const globalStore = useGlobalStore();
         :rounded="props.isRounded"
         :active="globalStore.pageState.isLoading"
         indeterminate
-        :style="loader"
+        :style="styles.loaderPosition"
         bg-color="surface-variant"
         :color="props.indicatorColor" />
 </template>

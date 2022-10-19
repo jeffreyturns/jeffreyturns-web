@@ -4,7 +4,7 @@ export const TITLE_PREFIX_APPENDED = ' • Jeffrey Turns';
 
 export const BASE_API_URL = 'https://jeffreyturns-api.vercel.app/api';
 
-export const THEME_SEED = '#616200'; //#7a564a 56633e 465e91 6e5d03 616200
+export const THEME_SEED = '#ffd0a3'; //#7a564a 56633e 465e91 6e5d03 616200
 
 export const SEARCH_IDLE_TIME = 1000;
 

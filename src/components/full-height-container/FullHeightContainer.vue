@@ -1,16 +1,11 @@
 <script setup lang="ts">
-import { CSSProperties } from 'vue';
-
-const fullHeight: CSSProperties = {
-    height: '100%',
-    margin: 'auto'
-};
+import * as styles from './full-height-container.css';
 </script>
 
 <template>
     <VContainer
         class="surface"
-        :style="fullHeight">
+        :style="styles.fullHeightContainer">
         <slot />
     </VContainer>
 </template>

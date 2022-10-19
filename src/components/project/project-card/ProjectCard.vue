@@ -46,7 +46,7 @@ function chipColor(title: string) {
             class="ma-1">
             <VImg
                 gradient="to bottom, rgba(0,0,0,.009), rgba(0,0,0,.2)"
-                class="rounded-lg"
+                class="rounded-lg bordered-alpha"
                 :aspect-ratio="2 / 1"
                 cover
                 :class="isHovering ? 'setScale' : 'resetScale'"
@@ -66,16 +66,11 @@ function chipColor(title: string) {
             <VCardActions>
                 <VChip
                     class="mx-1 px-2 font-weight-medium"
-                    :class="isHovering ? 'text-on-secondary-container' : 'text-on-surface-2'"
+                    :class="[`text-on-${chipColor(it)}-container`, `bg-${chipColor(it)}-container`]"
                     v-for="(it, i) in compProps.entry.tags"
                     :key="i"
-                    variant="outlined"
+                    variant="tonal"
                     label>
-                    <v-avatar
-                        left
-                        :color="chipColor(it)"
-                        class="me-1"
-                        size="18" />
                     {{ it }}
                 </VChip>
             </VCardActions>

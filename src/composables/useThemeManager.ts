@@ -8,7 +8,7 @@ export enum Theme {
     DARK = 'dark'
 }
 
-export const useThemeManager = (instance: ThemeInstance) => {
+export const useThemeManager = (instance: ThemeInstance): void => {
     const matchMedia = window.matchMedia('(prefers-color-scheme: dark)');
 
     const overrideTheme = () => {
@@ -40,9 +40,9 @@ export const useThemeManager = (instance: ThemeInstance) => {
     matchMedia.addEventListener('change', applyTheme);
 };
 
-export const getPrefTheme = () => localStorage.getItem(PREF_THEME) || 'auto';
+export const getPrefTheme = (): string => localStorage.getItem(PREF_THEME) || 'auto';
 
-export const setPrefTheme = (theme: Theme) => {
+export const setPrefTheme = (theme: Theme): void => {
     localStorage.setItem(PREF_THEME, theme);
 };
 

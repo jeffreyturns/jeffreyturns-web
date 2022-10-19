@@ -5,6 +5,11 @@ import { httpJson } from '@/api/base';
 
 type Path = string;
 
+interface Download {
+    title: string;
+    url: string;
+}
+
 interface Section {
     title?: string;
     description?: string;
@@ -15,7 +20,7 @@ export interface Project {
     title: string;
     description: string;
     header: Path;
-    isLightHeader: boolean;
+    download: Download[];
     sections: Section[];
 }
 
@@ -29,7 +34,7 @@ export const useProjectStore = defineStore('project', () => {
             title: 'Placeholder',
             description: 'Placeholder',
             header: 'Placeholder',
-            isLightHeader: true,
+            download: [],
             sections: []
         }
     });
@@ -39,7 +44,7 @@ export const useProjectStore = defineStore('project', () => {
             title: 'Placeholder',
             description: 'Placeholder',
             header: 'Placeholder',
-            isLightHeader: true,
+            download: [],
             sections: []
         };
     }

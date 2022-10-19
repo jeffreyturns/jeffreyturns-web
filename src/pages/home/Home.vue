@@ -15,7 +15,7 @@ onMounted(() => {
     favoritesStore.fetchData();
 });
 
-const welcomeArr: string[] = [
+const welcomeWords: string[] = [
     'Welcome',
     'I mirëpritur',
     'Dobrodošli',
@@ -46,8 +46,8 @@ const welcomeArr: string[] = [
 ];
 
 function welcomeWord(): string {
-    // return `${this.welcomeArr[Math.floor(Math.random() * this.welcomeArr.length)]}!`;
-    return `ようこそ!`;
+    return `${welcomeWords[Math.floor(Math.random() * welcomeWords.length)]}!`;
+    // return `ようこそ!`;
 }
 
 const collectionRow: RowColsArray = [4, 2, 6];
@@ -94,11 +94,11 @@ const collection = [
 
 <template>
     <div>
-        <RemoteBanner
+        <!-- <RemoteBanner
             state="info"
             type="bold"
             text="Page under building."
-            :dismissible="false" />
+            :dismissible="false" /> -->
 
         <VContainer fluid>
             <VRow

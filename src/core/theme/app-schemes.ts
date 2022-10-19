@@ -10,7 +10,7 @@ import { generateThemeFromSeed, generateTonals } from './generate-theme';
 /** generate default state colors
  *  @see https://m3.material.io/styles/color/the-color-system/custom-colors
  *  @param {HEX} seed color
- *  @returns {StatePalettes} - palletes of 4 colors
+ *  @returns {StatePalettes} palletes of 4 colors
  */
 const defaultStateColors = (seed: HEX): StatePalettes => {
     return {
@@ -60,7 +60,7 @@ export const themeFromSeed = (
 /** provide light Material Theme from Generated Theme
  *  @param {GeneratedTheme} theme - Generated theme from seed
  *  @param {StateColors} stateColors - provide custom state colors
- *  @returns {MaterialTheme} - light theme
+ *  @returns {MaterialTheme} light theme
  */
 const schemeLight = (
     theme: GeneratedTheme,
@@ -145,7 +145,7 @@ const schemeLight = (
 /** provide dark Material Theme from Generated Theme
  *  @param {GeneratedTheme} theme - Generated theme from seed
  *  @param {StateColors} stateColors - provide custom state colors
- *  @returns {MaterialTheme} - dark theme
+ *  @returns {MaterialTheme} dark theme
  */
 const schemeDark = (
     theme: GeneratedTheme,

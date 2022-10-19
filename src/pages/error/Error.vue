@@ -16,14 +16,15 @@ function goHome(): void {
 <template>
     <MessageBanner
         v-if="globalStore.pageState.isError"
-        title="Nothing here :("
-        message="Page you were looking for was not found.">
-        <VBtn
-            @click="goHome()"
-            prepend-icon="arrow_back"
-            class="mx-1">
-            Go Home
-        </VBtn>
-        <VBtn class="mx-1 mx-1 bg-secondary-container text-on-secondary-container">Error Log</VBtn>
+        title="Something went wrong!"
+        message="Refresh the page or try again later.">
+        <div>
+            <VBtn
+                @click="goHome()"
+                class="mx-1">
+                Go Home
+            </VBtn>
+            <VBtn class="mx-1 mx-1 bg-secondary-container text-on-secondary-container">View Log</VBtn>
+        </div>
     </MessageBanner>
 </template>

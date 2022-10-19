@@ -9,12 +9,14 @@ import { useGlobalStore } from '@/stores/global';
 import { useScrollStore } from '@/stores/scroll';
 
 import * as baseStyles from '@/styles/styles.css';
+import { useDisplay } from 'vuetify/lib/framework.mjs';
 
 const globalStore = useGlobalStore();
 const scrollStore = useScrollStore();
 
 const route = useRoute();
 const router = useRouter();
+const display = useDisplay();
 
 function elevationColor(reversed = false) {
     return reversed ? (scrollStore.getIsScolled() ? 'surface' : 'surface-4') : scrollStore.getIsScolled() ? 'surface-4' : 'surface';
@@ -35,13 +37,13 @@ function goBack(): void {
         :color="elevationColor()"
         :style="baseStyles.bgColorTransition">
         <VAppBarNavIcon
-            v-if="!rootDestonation() && !$vuetify.display.lgAndUp"
+            v-if="!rootDestonation() && !display.lgAndUp.value"
             @click="goBack()"
             icon="arrow_back"
             color="on-surface" />
 
         <VAppBarNavIcon
-            v-if="!$vuetify.display.xs && !$vuetify.display.lgAndUp && rootDestonation()"
+            v-if="!display.xs.value && !display.lgAndUp.value && rootDestonation()"
             @click="globalStore.rail = true"
             icon="menu"
             color="on-surface" />
@@ -57,10 +59,10 @@ function goBack(): void {
 
         <SearchBox />
 
-        <VSpacer v-if="!$vuetify.display.xs" />
+        <VSpacer v-if="!display.xs.value" />
 
         <div
-            v-if="!$vuetify.display.xs"
+            v-if="!display.xs.value"
             class="mx-2">
             <!-- <VBtn
                 @click="
@@ -83,25 +85,12 @@ function goBack(): void {
                 Beta
             </VBtn> -->
 
-            <VBtn
-                prepend-icon="fork_right"
-                variant="outlined"
-                class="mx-1">
-                Fork
-            </VBtn>
-
             <ThemeMenu />
         </div>
 
         <div
-            v-if="$vuetify.display.xs && !globalStore.showSearch"
+            v-if="display.xs.value && !globalStore.showSearch"
             class="mx-2">
-            <VBtn
-                prepend-icon="fork_right"
-                variant="outlined"
-                class="mx-1">
-                Fork
-            </VBtn>
             <ThemeMenu />
         </div>
     </VAppBar>

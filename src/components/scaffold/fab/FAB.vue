@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { useScrollStore } from '@/stores/scroll';
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 
 const scrollStore = useScrollStore();
+const route = useRoute();
+
+const isRootPage = computed(() => route.meta?.isRoot as boolean);
 
 function scrollToTop() {
     window.scrollTo({
@@ -22,7 +27,8 @@ function scrollToTop() {
             color="primary-container"
             icon="vertical_align_top"
             size="large"
-            class="me-4 mb-4 text-on-primary-container fab"
+            :class="{ fab: isRootPage }"
+            class="me-4 mb-4 text-on-primary-container"
             @click="() => scrollToTop()" />
     </transition>
 </template>

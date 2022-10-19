@@ -60,25 +60,6 @@ watch(
     { immediate: true, deep: true }
 );
 
-watch(
-    () => globalStore.pageState.isError,
-    () => {
-        if (globalStore.pageState.isError) {
-            snack.snack({
-                message: 'Something went wrong while loading.',
-                duration: false,
-                action: {
-                    title: 'OK',
-                    action: () => {
-                        console.log('test');
-                    }
-                }
-            });
-        }
-    },
-    { deep: true }
-);
-
 onMounted(() => {
     snack.snack({
         message: 'I serve cookies on this site to analyze traffic, remember your preferences, and optimize your experience.',
@@ -112,7 +93,7 @@ onMounted(() => {
                             <RouterView v-slot="{ Component }">
                                 <PageTransition
                                     :useRouterDefinedTransition="true"
-                                    :componentSlot="Component" />
+                                    :componentNode="Component" />
                             </RouterView>
                         </ScrollContainer>
                         <Footer />

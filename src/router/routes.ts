@@ -65,6 +65,15 @@ export const routes: Array<RouteRecordRaw> = [
         component: () => import('@/pages/policy/Policy.vue')
     },
     {
+        path: '/projects',
+        name: 'projects',
+        meta: {
+            title: 'Projects',
+            isRoot: true
+        },
+        component: () => import('@/pages/project/Projects.vue')
+    },
+    {
         path: '/project/:name',
         name: 'project',
         meta: {

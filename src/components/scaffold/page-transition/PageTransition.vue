@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { Component } from 'vue';
-
+import { computed, VNode } from 'vue';
 import { useRoute } from 'vue-router';
 
 interface PageTransitionProps {
     routerDefinedTransition?: boolean;
     defaultRouterPageTransition?: string;
-    componentSlot: Component;
+    componentNode: VNode;
 }
 
 const props = withDefaults(defineProps<PageTransitionProps>(), {
@@ -16,18 +15,18 @@ const props = withDefaults(defineProps<PageTransitionProps>(), {
 
 const route = useRoute();
 
-function transitionName(): string {
+const transition = computed((): string => {
     if (!props.routerDefinedTransition) {
         return 'fade-transition';
     }
     return (route.meta.transition as string) || props.defaultRouterPageTransition;
-}
+});
 </script>
 
 <template>
     <Transition
-        :name="transitionName()"
+        :name="transition"
         mode="out-in">
-        <component :is="props.componentSlot" />
+        <Component :is="props.componentNode" />
     </Transition>
 </template>

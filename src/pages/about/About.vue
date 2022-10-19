@@ -41,20 +41,27 @@ const items: Array<TextColumn> = [
         <div
             class="pt-2 pb-4 text-h2 text-center text-high-emphasis font-weight-medium"
             v-text="`About`" />
-        <VCard
-            class="ma-2"
-            color="transparent"
-            max-width="1120px"
-            v-for="(it, i) in items"
-            :key="i">
-            <div
-                v-if="it.title != ''"
-                class="text-h5 font-weight-medium mb-2 mt-4"
-                v-text="it.title" />
-            <div
-                v-if="it.text != ''"
-                class="text-body-1 mt-1"
-                v-text="it.text" />
-        </VCard>
+        <VContainer>
+            <VRow
+                align="center"
+                justify="center">
+                <VCol>
+                    <VCard
+                        class="ma-2"
+                        color="transparent"
+                        v-for="(it, i) in items"
+                        :key="i">
+                        <div
+                            v-if="it.title != ''"
+                            class="text-h5 font-weight-medium mb-2 mt-4"
+                            v-text="it.title" />
+                        <div
+                            v-if="it.text != ''"
+                            class="text-body-1 mt-1"
+                            v-text="it.text" />
+                    </VCard>
+                </VCol>
+            </VRow>
+        </VContainer>
     </VContainer>
 </template>

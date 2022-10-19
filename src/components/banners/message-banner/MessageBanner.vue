@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { CSSProperties } from 'vue';
 import FullHeightContainer from '@/components/full-height-container/FullHeightContainer.vue';
+
+import * as styles from './message-banner.css';
 
 interface MessageBannerProps {
     title: string;
@@ -9,19 +10,14 @@ interface MessageBannerProps {
 
 const props = withDefaults(defineProps<MessageBannerProps>(), {
     title: 'Placeholder',
-    message: 'Message placeholder'
+    message: undefined
 });
-
-const fullHeight: CSSProperties = {
-    height: '100%',
-    margin: 'auto'
-};
 </script>
 
 <template>
     <FullHeightContainer>
         <VRow
-            :style="fullHeight"
+            :style="styles.fullHeightContainer"
             class="py-16"
             align="center"
             justify="center">
@@ -32,6 +28,7 @@ const fullHeight: CSSProperties = {
                     class="pt-2 pb-2 text-h2 text-center text-high-emphasis font-weight-medium"
                     v-text="props.title" />
                 <div
+                    v-if="props.message != undefined"
                     class="pt-2 mx-12 text-h6 text-center text-medium-emphasis"
                     v-text="props.message" />
                 <div class="d-flex justify-space-around py-8">
