@@ -57,7 +57,7 @@ function railListItemHeight() {
 }
 
 function goBack(): void {
-    route.meta?.isRoot ? null : window.history.length > 2 ? router.go(-1) : router.push('/');
+    route.meta?.isRoot ? null : window.history.length < 2 ? router.go(-1) : router.push('/');
 }
 
 function goHome(): void {
