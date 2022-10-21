@@ -15,6 +15,7 @@ import Scaffold from '@/components/scaffold/Scaffold.vue';
 
 import NotFound from '@/pages/not-found/NotFound.vue';
 import Error from '@/pages/error/Error.vue';
+import UnderBuilding from '@/pages/error/UnderConstruction.vue';
 
 import SnackBar from '@/components/snack-bar/SnackBar.vue';
 import NavigationRail from '@/components/scaffold/navigation-rail/NavigationRail.vue';
@@ -27,7 +28,6 @@ import Footer from '@/components/scaffold/footer/Footer.vue';
 import ThemeProvider from '@/composables/provider/theme-provider/ThemeProvider.vue';
 import LocaleProvider from '@/composables/provider/locale-provider/LocaleProvider.vue';
 import { useLocale } from 'vuetify/lib/framework.mjs';
-import UnderBuilding from '../error/UnderConstruction.vue';
 
 const inRouteRecord = (record: string, tragetRoutesName: readonly string[]) => {
     return tragetRoutesName.includes(record || '');
