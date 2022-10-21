@@ -2,7 +2,12 @@
     "title": "Debuggy",
     "description": "Application for enable android debug bride over network with some additional features.",
     "header": "images/debuggy/header.png",
-    "isLightHeader": false,
+    "download": [
+        {
+            "title": "GitHub",
+            "url": "https://github.com/Jeffrey01596/Debuggy"
+        }
+    ],
     "sections": [
         {
             "title": "",
