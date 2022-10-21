@@ -4,6 +4,7 @@ import { defineStore } from 'pinia';
 
 export const useScrollStore = defineStore('scroll', () => {
     const isScrolled = ref(false);
+    const isTopFABVisible = ref(false);
 
     function getIsScolled(): boolean {
         return isScrolled.value;
@@ -13,5 +14,13 @@ export const useScrollStore = defineStore('scroll', () => {
         isScrolled.value = value;
     }
 
-    return { getIsScolled, setIsScrolled };
+    function getIsTopFABVisible(): boolean {
+        return isTopFABVisible.value;
+    }
+
+    function setIsTopFABVisible(value: boolean): void {
+        isTopFABVisible.value = value;
+    }
+
+    return { getIsScolled, setIsScrolled, getIsTopFABVisible, setIsTopFABVisible };
 });

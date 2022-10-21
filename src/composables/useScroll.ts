@@ -9,6 +9,7 @@ export const useScroll = () => {
     function observe() {
         window.addEventListener('scroll', () => {
             scrollStore.setIsScrolled(window.scrollY > SCROLL_THRESHOLD_HANDLE_HEIGHT);
+            scrollStore.setIsTopFABVisible(window.scrollY > SCROLL_TO_TOP_HANDLE_HEIGHT);
         });
     }
 

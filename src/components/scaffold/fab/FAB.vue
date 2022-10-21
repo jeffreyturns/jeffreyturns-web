@@ -20,7 +20,7 @@ function scrollToTop() {
 <template>
     <transition name="scale-transition">
         <VBtn
-            v-show="scrollStore.getIsScolled()"
+            v-show="scrollStore.getIsTopFABVisible()"
             position="fixed"
             location="bottom right"
             elevation="1"
