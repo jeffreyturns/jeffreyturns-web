@@ -16,10 +16,10 @@ const isRootPage = computed(() => route.meta?.isRoot as boolean);
         <slot name="rail" />
     </div>
     <slot name="top" />
-    <div v-if="!globalStore.isNotFoundPage && !globalStore.pageState.isError">
+    <div v-if="!globalStore.isNotFoundPage && !globalStore.pageState.isError && !globalStore.pageState.isUnderBuilding">
         <slot name="content" />
     </div>
-    <div v-if="$vuetify.display.xs && isRootPage">
+    <div v-if="display.xs.value && isRootPage">
         <slot name="bar" />
     </div>
     <slot name="fab" />

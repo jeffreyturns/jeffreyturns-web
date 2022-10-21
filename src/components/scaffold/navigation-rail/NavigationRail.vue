@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { RouteLocationRaw, useRoute, useRouter } from 'vue-router';
-import { useDisplay } from 'vuetify/lib/framework.mjs';
+import { useDisplay, useLocale } from 'vuetify/lib/framework.mjs';
 
 import RailLogo from '@/components/scaffold/navigation-rail/rail-logo/RailLogo.vue';
-
-import { NAVIGATION_ITEMS } from '@/common/constants';
 
 import * as styles from './navigation-rail.css';
 import * as baseStyles from '@/styles/styles.css';
@@ -14,6 +12,7 @@ import { useGlobalStore } from '@/stores/global';
 const route = useRoute();
 const router = useRouter();
 const display = useDisplay();
+const { t } = useLocale();
 
 const globalStore = useGlobalStore();
 
@@ -24,6 +23,14 @@ interface NavigationRailProps {
 const props = withDefaults(defineProps<NavigationRailProps>(), {
     isLabeled: false
 });
+
+const NAVIGATION_ITEMS = [
+    { pathName: 'home', icon: 'home', to: '/' },
+    { pathName: 'about', icon: 'article', to: '/about' },
+    { pathName: 'projects', icon: 'history_edu', to: '/projects' },
+    { pathName: 'privacyPolicy', icon: 'lock_person', to: '/privacy-policy' },
+    { pathName: 'contact', icon: 'mail', to: '/contact' }
+];
 
 function rootDestonation(): boolean {
     return route.meta?.isRoot as boolean;
@@ -133,14 +140,14 @@ function navigate(path: RouteLocationRaw): void {
                             <VListItemTitle
                                 v-if="display.xlAndUp.value || display.mdAndDown.value"
                                 :class="pathIsRoute(item.to) ? 'on-surface font-weight-medium' : 'on-surface-variant'">
-                                {{ item.text }}
+                                {{ t(`$vuetify.pages.${item.pathName}.railTitle`) }}
                             </VListItemTitle>
                         </VListItem>
                         <div
                             class="text-center mt-2 text-subtitle-2"
                             :class="pathIsRoute(item.to) ? 'on-surface font-weight-medium' : 'on-surface-variant'"
                             v-if="props.isLabeled && display.lgAndDown.value && !display.mdAndDown.value">
-                            <span>{{ item.text }}</span>
+                            <span>{{ t(`$vuetify.pages.${item.pathName}.railTitle`) }}</span>
                         </div>
                     </div>
                 </VList>

@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { mergeProps, ref, watch } from 'vue';
 
-import { getPrefTheme, setPrefTheme, Theme, toThemeEnums, useThemeManager } from '@/composables/useThemeManager';
+import { getPrefTheme, setPrefTheme, Theme, toThemeEnums, useThemeManager, THEME_VALUES } from '@/composables/useThemeManager';
 
-import { THEME_VALUES } from '@/common/constants';
-
-import { useTheme as useFrameworkTheme } from 'vuetify/lib/framework.mjs';
+import { useLocale, useTheme as useFrameworkTheme } from 'vuetify/lib/framework.mjs';
 
 import { menu as menuConfig } from '@/common/components-config';
 
 const fmTheme = useFrameworkTheme();
+const { t } = useLocale();
 
 const currentTheme = ref(toThemeEnums(getPrefTheme()));
 
@@ -44,7 +43,7 @@ function getIcon(): string {
     }
 }
 
-function changeTheme(value: Theme) {
+function change(value: Theme) {
     setPrefTheme(value);
     useThemeManager(fmTheme);
     currentTheme.value = value;
@@ -68,7 +67,7 @@ function changeTheme(value: Theme) {
                         :color="model ? 'primary' : 'on-surface'"
                         v-bind="mergeProps(menu, tooltip)" />
                 </template>
-                <span>{{ `t('tooltips.theme')` }}</span>
+                <span>{{ t('$vuetify.tooltips.theme') }}</span>
             </VTooltip>
         </template>
         <VDefaultsProvider :defaults="menuConfig">
@@ -77,9 +76,9 @@ function changeTheme(value: Theme) {
                     v-for="(it, i) in THEME_VALUES"
                     :key="i"
                     :prepend-icon="currentTheme == it.value ? 'done' : ' '"
-                    @click="changeTheme(it.value)"
+                    @click="change(it.value)"
                     :value="i">
-                    <VListItemTitle v-text="it.title" />
+                    <VListItemTitle v-text="t(it.title)" />
                 </VListItem>
             </VList>
         </VDefaultsProvider>

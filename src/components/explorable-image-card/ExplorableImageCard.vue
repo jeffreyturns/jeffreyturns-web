@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import * as baseStyles from '@/styles/styles.css';
+import { useLocale } from 'vuetify/lib/framework.mjs';
 
 interface EntryProps {
     isPaint: boolean;
@@ -17,6 +18,8 @@ interface EntryProps {
 interface ExplorableImageCardProps {
     entry?: EntryProps;
 }
+
+const { t } = useLocale();
 
 const compProps = defineProps<ExplorableImageCardProps>();
 </script>
@@ -51,7 +54,7 @@ const compProps = defineProps<ExplorableImageCardProps>();
                                 color="white"
                                 :to="compProps.entry?.button.isRouterPath ? compProps.entry?.button.url : undefined"
                                 :href="!compProps.entry?.button.isRouterPath ? compProps.entry?.button.url : undefined">
-                                {{ compProps.entry?.button.title }}
+                                {{ t(compProps.entry?.button.title) }}
                             </VBtn>
                         </div>
                     </VFadeTransition>

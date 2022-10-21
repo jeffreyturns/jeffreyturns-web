@@ -37,7 +37,7 @@ const items: Array<TextColumn> = [
 </script>
 
 <template>
-    <VContainer>
+    <VContainer v-if="false">
         <div
             class="pt-2 pb-4 text-h2 text-center text-high-emphasis font-weight-medium"
             v-text="`Privacy Policy`" />

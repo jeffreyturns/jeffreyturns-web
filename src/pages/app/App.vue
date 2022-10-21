@@ -24,7 +24,10 @@ import ScrollContainer from '@/components/scroll-container/ScrollContainer.vue';
 import PageTransition from '@/components/scaffold/page-transition/PageTransition.vue';
 import FAB from '@/components/scaffold/fab/FAB.vue';
 import Footer from '@/components/scaffold/footer/Footer.vue';
-import ThemeProvider from '@/components/theme-provider/ThemeProvider.vue';
+import ThemeProvider from '@/composables/provider/theme-provider/ThemeProvider.vue';
+import LocaleProvider from '@/composables/provider/locale-provider/LocaleProvider.vue';
+import { useLocale } from 'vuetify/lib/framework.mjs';
+import UnderBuilding from '../error/UnderConstruction.vue';
 
 const inRouteRecord = (record: string, tragetRoutesName: readonly string[]) => {
     return tragetRoutesName.includes(record || '');
@@ -32,9 +35,11 @@ const inRouteRecord = (record: string, tragetRoutesName: readonly string[]) => {
 
 const route = useRoute();
 const snack = useSnack();
+const locale = useLocale();
 const globalStore = useGlobalStore();
 
 const showSearchAtRoutes = ['search'];
+const pageUnderConstruction = ['privacy policy', 'about'];
 
 const scrollToTop = () => {
     window.scrollTo({
@@ -47,11 +52,13 @@ const scrollToTop = () => {
 watch(
     () => route,
     value => {
-        useAppTitle(`${value.meta?.title}`);
+        useAppTitle(locale.t(`$vuetify.pages.${route.meta?.title}.documentTitle`));
 
         globalStore.isNotFoundPage = inRouteRecord(value?.meta?.layout?.toString() ?? '', [Layout.NONE]);
 
         globalStore.showSearch = inRouteRecord(value.name?.toString() || '', showSearchAtRoutes);
+
+        globalStore.pageState.isUnderBuilding = inRouteRecord(value.name?.toString() || '', pageUnderConstruction);
 
         globalStore.resetStates();
 
@@ -62,10 +69,10 @@ watch(
 
 onMounted(() => {
     snack.snack({
-        message: 'I serve cookies on this site to analyze traffic, remember your preferences, and optimize your experience.',
+        message: '$vuetify.cookie.message',
         duration: false,
         action: {
-            title: 'Got it',
+            title: '$vuetify.cookie.action',
             action: () => {
                 console.log('test');
             }
@@ -76,41 +83,44 @@ onMounted(() => {
 
 <template>
     <ThemeProvider>
-        <VApp>
-            <Scaffold>
-                // top actions
-                <template #top>
-                    <TopAppBar />
-                </template>
-                // rail or drawer
-                <template #rail>
-                    <NavigationRail :isLabeled="true" />
-                </template>
-                // content or router
-                <template #content>
-                    <VMain>
-                        <ScrollContainer :isFluid="true">
-                            <RouterView v-slot="{ Component }">
-                                <PageTransition
-                                    :useRouterDefinedTransition="true"
-                                    :componentNode="Component" />
-                            </RouterView>
-                        </ScrollContainer>
-                        <Footer />
-                    </VMain>
-                </template>
-                // bottom bar or bar with fab
-                <template #bar>
-                    <NavigationBar />
-                </template>
-                // additional action
-                <template #fab>
-                    <FAB />
-                </template>
-            </Scaffold>
-            <NotFound />
-            <Error />
-            <SnackBar />
-        </VApp>
+        <LocaleProvider>
+            <VApp>
+                <Scaffold>
+                    // top actions
+                    <template #top>
+                        <TopAppBar />
+                    </template>
+                    // rail or drawer
+                    <template #rail>
+                        <NavigationRail :isLabeled="true" />
+                    </template>
+                    // content or router
+                    <template #content>
+                        <VMain>
+                            <ScrollContainer :isFluid="true">
+                                <RouterView v-slot="{ Component }">
+                                    <PageTransition
+                                        :useRouterDefinedTransition="true"
+                                        :componentNode="Component" />
+                                </RouterView>
+                            </ScrollContainer>
+                            <Footer />
+                        </VMain>
+                    </template>
+                    // bottom bar or bar with fab
+                    <template #bar>
+                        <NavigationBar />
+                    </template>
+                    // additional action
+                    <template #fab>
+                        <FAB />
+                    </template>
+                </Scaffold>
+                <NotFound />
+                <Error />
+                <UnderBuilding />
+                <SnackBar />
+            </VApp>
+        </LocaleProvider>
     </ThemeProvider>
 </template>

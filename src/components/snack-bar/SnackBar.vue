@@ -4,12 +4,15 @@ import { ref, watch } from 'vue';
 import { SnackAction, useSnackStore } from '@/stores/snack';
 
 import { SNACKBAR_DEFAULT_DURATION_MS } from '@/stores/snack';
+import { useLocale } from 'vuetify/lib/framework.mjs';
 
 const snackStore = useSnackStore();
 
 const message = ref<string>(snackStore.snack?.message ?? 'Snackbar');
 const action = ref<SnackAction | boolean>(snackStore.snack?.action ?? false);
 const actionTitle = ref<string>(typeof action.value != 'boolean' ? action.value.title ?? 'Cancel' : '');
+
+const { t } = useLocale();
 
 function calcDuration(): number {
     switch (typeof snackStore.snack?.duration) {
@@ -48,7 +51,7 @@ watch(
     <VSnackbar
         :timeout="calcDuration()"
         v-model="snackStore.isShow">
-        {{ message }}
+        {{ t(message) }}
         <template
             v-slot:actions
             v-if="action">
@@ -57,7 +60,7 @@ watch(
                 color="inverse-primary"
                 variant="text"
                 @click="invokeAction()">
-                {{ actionTitle }}
+                {{ t(actionTitle) }}
             </VBtn>
         </template>
     </VSnackbar>

@@ -10,6 +10,7 @@ export interface ComplexErrorMessage {
 export interface PageState {
     isLoading: boolean;
     isError: boolean;
+    isUnderBuilding: boolean;
 }
 
 export const useGlobalStore = defineStore('global', () => {
@@ -17,7 +18,8 @@ export const useGlobalStore = defineStore('global', () => {
     const isNotFoundPage = ref(false);
     const pageState = ref<PageState>({
         isError: false,
-        isLoading: false
+        isLoading: false,
+        isUnderBuilding: false
     });
     const complexError = ref<ComplexErrorMessage>({
         error: 418,

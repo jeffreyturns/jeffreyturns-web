@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { Project } from '@/stores/project';
+import { useDisplay } from 'vuetify/lib/framework.mjs';
+
+const display = useDisplay();
 
 interface ProjectViewProps {
     entry: Project;
@@ -19,11 +22,11 @@ const props = withDefaults(defineProps<ProjectViewProps>(), {
                 :xs="12">
                 <VCard class="h-100 rounded-xl d-flex flex-column justify-center pa-12">
                     <div
-                        :class="`${$vuetify.display.xs ? 'text-h2' : 'text-h1'}`"
+                        :class="`${display.xs.value ? 'text-h2' : 'text-h1'}`"
                         class="font-weight-medium my-4"
                         v-text="props.entry.title" />
                     <div
-                        :class="`${$vuetify.display.xs ? 'text-h6' : 'text-h5'}`"
+                        :class="`${display.xs.value ? 'text-h6' : 'text-h5'}`"
                         class="mb-4"
                         v-text="props.entry.description" />
                     <div

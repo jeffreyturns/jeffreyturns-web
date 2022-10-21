@@ -12,26 +12,6 @@ const items: Array<TextColumn> = [
     {
         title: '',
         text: 'Pictures, photos or graphics used in my internet offer are basically protected by copyright. The free use of the images is not allowed.'
-    },
-    {
-        title: '',
-        text: 'As far as the content on this page was not created by me, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please inform me so that I can remove such content immediately upon becoming aware of the infringement.'
-    },
-    {
-        title: 'Lorem',
-        text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos voluptas cum excepturi, vero eum suscipit dolor voluptatum quas deleniti libero delectus sapiente possimus minus quis impedit officiis culpa recusandae distinctio.'
-    },
-    {
-        title: 'Lorem',
-        text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos voluptas cum excepturi, vero eum suscipit dolor voluptatum quas deleniti libero delectus sapiente possimus minus quis impedit officiis culpa recusandae distinctio.'
-    },
-    {
-        title: 'Lorem',
-        text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos voluptas cum excepturi, vero eum suscipit dolor voluptatum quas deleniti libero delectus sapiente possimus minus quis impedit officiis culpa recusandae distinctio.'
-    },
-    {
-        title: 'Lorem',
-        text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos voluptas cum excepturi, vero eum suscipit dolor voluptatum quas deleniti libero delectus sapiente possimus minus quis impedit officiis culpa recusandae distinctio.'
     }
 ];
 </script>

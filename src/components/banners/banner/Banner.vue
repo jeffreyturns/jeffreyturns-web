@@ -5,7 +5,7 @@ export type BannerStateType = 'info' | 'warning' | 'success' | 'error';
 
 export type BannerType = 'bold' | 'normal';
 
-interface RemoteBannerProps {
+interface BannerProps {
     state: BannerStateType;
     type: BannerType;
     text: string;
@@ -14,7 +14,7 @@ interface RemoteBannerProps {
 
 const model = ref(true);
 
-const props = withDefaults(defineProps<RemoteBannerProps>(), {
+const props = withDefaults(defineProps<BannerProps>(), {
     state: 'info',
     type: 'normal',
     text: 'Placeholder',

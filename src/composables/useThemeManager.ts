@@ -8,6 +8,21 @@ export enum Theme {
     DARK = 'dark'
 }
 
+export const THEME_VALUES = [
+    {
+        title: '$vuetify.menu.theme.auto',
+        value: Theme.AUTO
+    },
+    {
+        title: '$vuetify.menu.theme.light',
+        value: Theme.LIGHT
+    },
+    {
+        title: '$vuetify.menu.theme.dark',
+        value: Theme.DARK
+    }
+];
+
 export const useThemeManager = (instance: ThemeInstance): void => {
     const matchMedia = window.matchMedia('(prefers-color-scheme: dark)');
 

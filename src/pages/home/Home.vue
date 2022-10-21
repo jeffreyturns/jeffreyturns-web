@@ -1,15 +1,18 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
-import RemoteBanner from '@/components/banners/remote-banner/RemoteBanner.vue';
+import Banner from '@/components/banners/banner/Banner.vue';
 import ExplorableImageCard from '@/components/explorable-image-card/ExplorableImageCard.vue';
 
 import { useFavoritesStore } from '@/stores/favorites';
 import ProjectCard from '@/components/project/project-card/ProjectCard.vue';
+import { useLocale, useDisplay } from 'vuetify/lib/framework.mjs';
 
 export type RowColsArray = (number | undefined)[];
 
 const favoritesStore = useFavoritesStore();
+const display = useDisplay();
+const { t } = useLocale();
 
 onMounted(() => {
     favoritesStore.fetchData();
@@ -60,7 +63,7 @@ const collection = [
             url: 'https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/headers/image_4.png'
         },
         button: {
-            title: 'Explore',
+            title: '$vuetify.common.explore',
             url: '/collections/imagination',
             isRouterPath: true
         }
@@ -72,7 +75,7 @@ const collection = [
             url: 'https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/headers/image_2.png'
         },
         button: {
-            title: 'Explore',
+            title: '$vuetify.common.explore',
             url: '/collections/imagination',
             isRouterPath: true
         }
@@ -84,7 +87,7 @@ const collection = [
             url: 'https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/headers/image_1.png'
         },
         button: {
-            title: 'Explore',
+            title: '$vuetify.common.explore',
             url: '/collections/imagination',
             isRouterPath: true
         }
@@ -94,11 +97,11 @@ const collection = [
 
 <template>
     <div>
-        <!-- <RemoteBanner
+        <Banner
             state="info"
             type="bold"
             text="Page under building."
-            :dismissible="false" /> -->
+            :dismissible="false" />
 
         <VContainer fluid>
             <VRow
@@ -108,11 +111,15 @@ const collection = [
                     :lg="7"
                     :sm="12">
                     <div
-                        :class="`${$vuetify.display.xs ? 'text-h2' : 'text-h1'}`"
+                        :class="`${display.xs.value ? 'text-h2' : 'text-h1'}`"
                         class="font-weight-thin">
-                        <i class="font-weight-medium">Simplicity</i>
-                        is the easiest path to true
-                        <i class="font-weight-medium">beauty.</i>
+                        <i
+                            class="font-weight-medium"
+                            v-text="t('$vuetify.pages.home.quote.first')" />
+                        {{ t('$vuetify.pages.home.quote.second') }}
+                        <i
+                            class="font-weight-medium"
+                            v-text="t('$vuetify.pages.home.quote.third')" />
                     </div>
                     <VRow
                         no-gutters
@@ -130,13 +137,13 @@ const collection = [
                     :sm="12">
                     <VCard class="pa-3">
                         <div
-                            :class="`${$vuetify.display.xs ? 'text-h3' : 'text-h2'}`"
+                            :class="`${display.xs.value ? 'text-h3' : 'text-h2'}`"
                             class="font-weight-bold mb-4"
                             v-text="welcomeWord()" />
                         <div class="text-subimageTitle-1">
-                            I’m Jeffrey Turns, a 19-year-old developer and UI/UX designer from Ukraine. Right now I am studying as computer engineer.
+                            {{ t('$vuetify.pages.home.bio.messageMe') }}
                             <div class="ma-2" />
-                            My goal is to create solutions that combine Google latest design guidelines and modern and innovative digital technologies.
+                            {{ t('$vuetify.pages.home.bio.messageGoal') }}
                         </div>
                         <div class="my-2">
                             <VBtn
@@ -144,7 +151,7 @@ const collection = [
                                 variant="outlined"
                                 class="mt-2"
                                 append-icon="arrow_right_alt">
-                                To about
+                                {{ t('$vuetify.pages.home.bio.action') }}
                             </VBtn>
                         </div>
                     </VCard>
@@ -154,7 +161,7 @@ const collection = [
         <VContainer class="text-center">
             <div
                 class="text-h4 font-weight-medium"
-                v-text="`Favorites projects`" />
+                v-text="t('$vuetify.pages.home.favoriteProjects')" />
         </VContainer>
         <VContainer
             full-height

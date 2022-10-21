@@ -114,7 +114,7 @@ export const components = {
 };
 
 export const locale = {
-    defaultLocale: 'ua',
+    defaultLocale: 'en',
     messages: { en, ua }
 };
 

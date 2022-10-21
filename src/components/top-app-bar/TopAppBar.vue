@@ -9,12 +9,14 @@ import { useGlobalStore } from '@/stores/global';
 import { useScrollStore } from '@/stores/scroll';
 
 import * as baseStyles from '@/styles/styles.css';
-import { useDisplay } from 'vuetify/lib/framework.mjs';
+import { useDisplay, useLocale } from 'vuetify/lib/framework.mjs';
+import LocaleMenu from '../menus/LocaleMenu.vue';
 
 const globalStore = useGlobalStore();
 const scrollStore = useScrollStore();
 
 const route = useRoute();
+const locale = useLocale();
 const router = useRouter();
 const display = useDisplay();
 
@@ -51,7 +53,7 @@ function goBack(): void {
         <VToolbarTitle
             class="font-weight-medium"
             v-if="!globalStore.showSearch"
-            v-text="$route.meta?.title ?? 'Not Found'" />
+            v-text="locale.t(`$vuetify.pages.${route.meta?.title}.documentTitle`) ?? 'Not Found'" />
 
         <IndeterminateLoader
             :isRounded="true"
@@ -86,12 +88,14 @@ function goBack(): void {
             </VBtn> -->
 
             <ThemeMenu />
+            <LocaleMenu />
         </div>
 
         <div
             v-if="display.xs.value && !globalStore.showSearch"
             class="mx-2">
             <ThemeMenu />
+            <LocaleMenu />
         </div>
     </VAppBar>
 </template>

@@ -2,10 +2,12 @@
 import { NAVIGATION_ITEMS } from '@/common/constants';
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { useLocale } from 'vuetify/lib/framework.mjs';
 
 import * as styles from './navigation-bar.css';
 
 const route = useRoute();
+const { t } = useLocale();
 
 const barItemWidth = computed(() => `${window.innerWidth / NAVIGATION_ITEMS.length}px`);
 </script>
@@ -33,7 +35,7 @@ const barItemWidth = computed(() => `${window.innerWidth / NAVIGATION_ITEMS.leng
                     :color="route.path == it.to ? 'on-secondary-container' : 'on-surface-variant'"
                     :class="route.path == it.to ? 'to-filled-symbol' : 'to-outlined-symbol'" />
             </div>
-            <span v-text="it.text" />
+            <span v-text="t(`$vuetify.pages.${it.pathName}.railTitle`)" />
         </VBtn>
     </VBottomNavigation>
 </template>

@@ -4,9 +4,11 @@ import { useRoute, useRouter } from 'vue-router';
 import { useGlobalStore } from '@/stores/global';
 
 import MessageBanner from '@/components/banners/message-banner/MessageBanner.vue';
+import { useLocale } from 'vuetify/lib/framework.mjs';
 
 const globalStore = useGlobalStore();
 const route = useRoute();
+const { t } = useLocale();
 const router = useRouter();
 
 function goBack(): void {
@@ -30,12 +32,12 @@ function goBackAndTop(): void {
 <template>
     <MessageBanner
         v-if="globalStore.isNotFoundPage"
-        title="Nothing here :("
-        message="Page you were looking for was not found.">
+        :title="t('$vuetify.pages.notFound.title')"
+        :message="t('$vuetify.pages.notFound.subtitle')">
         <VBtn
             append-icon="arrow_right_alt"
             @click="goBackAndTop()">
-            Go Back
+            {{ t('$vuetify.pages.notFound.action.goBack') }}
         </VBtn>
     </MessageBanner>
 </template>

@@ -10,7 +10,8 @@ export async function httpJson<T>(path: string, meta: { method: MethodType } = {
 
     global.updatePageState({
         isLoading: true,
-        isError: false
+        isError: false,
+        isUnderBuilding: false
     });
 
     try {
@@ -34,7 +35,8 @@ export async function httpText(path: string, meta: { method: MethodType } = { me
 
     global.updatePageState({
         isLoading: true,
-        isError: false
+        isError: false,
+        isUnderBuilding: false
     });
 
     try {
