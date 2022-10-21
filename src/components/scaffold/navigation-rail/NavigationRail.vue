@@ -4,6 +4,8 @@ import { useDisplay, useLocale } from 'vuetify/lib/framework.mjs';
 
 import RailLogo from '@/components/scaffold/navigation-rail/rail-logo/RailLogo.vue';
 
+import { NAVIGATION_ITEMS } from '@/stores/global';
+
 import * as styles from './navigation-rail.css';
 import * as baseStyles from '@/styles/styles.css';
 
@@ -23,14 +25,6 @@ interface NavigationRailProps {
 const props = withDefaults(defineProps<NavigationRailProps>(), {
     isLabeled: false
 });
-
-const NAVIGATION_ITEMS = [
-    { pathName: 'home', icon: 'home', to: '/' },
-    { pathName: 'about', icon: 'article', to: '/about' },
-    { pathName: 'projects', icon: 'history_edu', to: '/projects' },
-    { pathName: 'privacyPolicy', icon: 'lock_person', to: '/privacy-policy' },
-    { pathName: 'contact', icon: 'mail', to: '/contact' }
-];
 
 function rootDestonation(): boolean {
     return route.meta?.isRoot as boolean;

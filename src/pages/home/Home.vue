@@ -50,7 +50,6 @@ const welcomeWords: string[] = [
 
 function welcomeWord(): string {
     return `${welcomeWords[Math.floor(Math.random() * welcomeWords.length)]}!`;
-    // return `ようこそ!`;
 }
 
 const collectionRow: RowColsArray = [4, 2, 6];
@@ -62,11 +61,11 @@ const collection = [
             title: 'Cloud Space',
             url: 'https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/headers/image_4.png'
         },
-        button: {
-            title: '$vuetify.common.explore',
-            url: '/collections/imagination',
-            isRouterPath: true
-        }
+        // button: {
+        //     title: '$vuetify.common.explore',
+        //     url: '/collections/imagination',
+        //     isRouterPath: true
+        // }
     },
     {
         isPaint: true,
@@ -74,11 +73,11 @@ const collection = [
             title: 'Sun Collpase',
             url: 'https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/headers/image_2.png'
         },
-        button: {
-            title: '$vuetify.common.explore',
-            url: '/collections/imagination',
-            isRouterPath: true
-        }
+        // button: {
+        //     title: '$vuetify.common.explore',
+        //     url: '/collections/imagination',
+        //     isRouterPath: true
+        // }
     },
     {
         isPaint: true,
@@ -86,11 +85,11 @@ const collection = [
             title: 'Undiscovered Flower',
             url: 'https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/headers/image_1.png'
         },
-        button: {
-            title: '$vuetify.common.explore',
-            url: '/collections/imagination',
-            isRouterPath: true
-        }
+        // button: {
+        //     title: '$vuetify.common.explore',
+        //     url: '/collections/imagination',
+        //     isRouterPath: true
+        // }
     }
 ];
 </script>
@@ -98,10 +97,11 @@ const collection = [
 <template>
     <div>
         <Banner
-            state="info"
-            type="bold"
+            v-if="false"
+            state="warning"
+            type="normal"
             text="Page under building."
-            :dismissible="false" />
+            :dismissible="true" />
 
         <VContainer fluid>
             <VRow
@@ -120,6 +120,7 @@ const collection = [
                         <i
                             class="font-weight-medium"
                             v-text="t('$vuetify.pages.home.quote.third')" />
+                        <!-- <i class="text-h6"> 一 Seishuu Handa</i> -->
                     </div>
                     <VRow
                         no-gutters

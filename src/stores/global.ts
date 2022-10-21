@@ -13,6 +13,13 @@ export interface PageState {
     isUnderBuilding: boolean;
 }
 
+export const NAVIGATION_ITEMS = [
+    { pathName: 'home', icon: 'home', to: '/' },
+    { pathName: 'about', icon: 'article', to: '/about' },
+    { pathName: 'projects', icon: 'history_edu', to: '/projects' },
+    { pathName: 'privacyPolicy', icon: 'lock_person', to: '/privacy-policy' }
+];
+
 export const useGlobalStore = defineStore('global', () => {
     // define vars
     const isNotFoundPage = ref(false);

@@ -33,18 +33,8 @@ export const routes: Array<RouteRecordRaw> = [
         meta: {
             title: 'about',
             isRoot: true
-            // transition: 'scroll-x-transition'
         },
         component: () => import('@/pages/about/About.vue')
-    },
-    {
-        path: '/search',
-        name: 'search',
-        meta: {
-            title: 'search',
-            isRoot: true
-        },
-        component: () => import('@/pages/search/Search.vue')
     },
     {
         path: '/privacy-policy',

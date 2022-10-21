@@ -45,8 +45,7 @@ const currentYear = () => new Date().getFullYear();
                     :key="it.title"
                     :href="it.url"
                     variant="text"
-                    class="mx-2"
-                    rounded="xl">
+                    class="mx-2">
                     {{ it.title }}
                 </VBtn>
             </VCol>

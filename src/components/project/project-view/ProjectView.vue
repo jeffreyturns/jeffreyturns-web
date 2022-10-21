@@ -17,6 +17,7 @@ const props = withDefaults(defineProps<ProjectViewProps>(), {
     <div>
         <VRow>
             <VCol
+                :cols="12"
                 :lg="6"
                 :sm="12"
                 :xs="12">
@@ -46,6 +47,7 @@ const props = withDefaults(defineProps<ProjectViewProps>(), {
                 </VCard>
             </VCol>
             <VCol
+                :cols="12"
                 :lg="6"
                 :sm="12"
                 :xs="12">

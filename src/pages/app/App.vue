@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, watch } from 'vue';
+import { watch } from 'vue';
 
 import '@/styles/main.scss';
 
@@ -39,7 +39,7 @@ const locale = useLocale();
 const globalStore = useGlobalStore();
 
 const showSearchAtRoutes = ['search'];
-const pageUnderConstruction = ['privacy policy', 'about'];
+const pageUnderConstruction = ['privacy policy', 'collections'];
 
 const scrollToTop = () => {
     window.scrollTo({
@@ -67,18 +67,18 @@ watch(
     { immediate: true, deep: true }
 );
 
-onMounted(() => {
-    snack.snack({
-        message: '$vuetify.cookie.message',
-        duration: false,
-        action: {
-            title: '$vuetify.cookie.action',
-            action: () => {
-                console.log('test');
-            }
-        }
-    });
-});
+// onMounted(() => {
+//     snack.snack({
+//         message: '$vuetify.cookie.message',
+//         duration: false,
+//         action: {
+//             title: '$vuetify.cookie.action',
+//             action: () => {
+//                 console.log('test');
+//             }
+//         }
+//     });
+// });
 </script>
 
 <template>

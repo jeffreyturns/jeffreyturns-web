@@ -64,7 +64,21 @@ export default {
         },
         about: {
             documentTitle: 'About',
-            railTitle: 'About'
+            railTitle: 'About',
+            textColumn: {
+                aboutText:
+                    "Hello, i'm Jeffrey Turns. Currently studying as a computer engineer. Android development is my hobby but i want to turn it into a job. I'm also intrested in Telegram contests and web-development.",
+                copyrightTitle: 'Copyright',
+                copyrightText1:
+                    'The copyright can be found at the bottom of each page. Any reproduction, excerpts or commercial use requires prior written permission from me.',
+                copyrightText2:
+                    'Pictures, photos or graphics used in my portfolio web-site are basically protected by copyright. The free use of the images is not allowed.',
+                linkTitle: 'Link liability',
+                linkText:
+                    'My website contains links to external pages of third parties, on whose contents I have no influence. Therefore, I can not assume any liability for these external contents. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal contents were not recognizable at the time of linking.',
+                contactTitle: 'Contact',
+                contactText: 'You can contact with me using:'
+            }
         },
         search: {
             documentTitle: 'Search'
@@ -86,9 +100,6 @@ export default {
         },
         collections: {
             documentTitle: 'Collections'
-        },
-        contact: {
-            railTitle: 'Contact'
         }
     }
 };

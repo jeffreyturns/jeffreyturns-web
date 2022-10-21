@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { NAVIGATION_ITEMS } from '@/common/constants';
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { useLocale } from 'vuetify/lib/framework.mjs';
+
+import { NAVIGATION_ITEMS } from '@/stores/global';
 
 import * as styles from './navigation-bar.css';
 
