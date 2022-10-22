@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  ✨ Perconal portfolio website written with Vue 3 Composition API + Vuetify 3 using Material You Guidelines ✨
+  ✨ Personal portfolio website written with Vue 3 Composition API + Vuetify 3 using Material You Guidelines ✨
 <p>
 
 <p align="center">
