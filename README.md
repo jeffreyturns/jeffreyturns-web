@@ -1,6 +1,25 @@
-# ts-vue-boilerplate
+<p align="center">
+  <img src="./.github/images/header.png" alt="header">
+</p>
 
-## Project setup
+<p align="center">
+  ✨ Perconal portfolio website written with Vue 3 Composition API + Vuetify 3 using Material You Guidelines ✨
+<p>
+
+<p align="center">
+  <a href="https://argente.vercel.app"><strong>⚡ Browse &rarr;</strong></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Jeffrey01596/argente-icons">
+    <img src="https://img.shields.io/github/stars/Jeffrey01596/jeffreyturns" alt="Project Stars">
+  </a>
+  <a href="https://github.com/Jeffrey01596/argente-icons/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Jeffrey01596/jeffreyturns" alt="License">
+  </a>
+</p>
+
+## Project startup
 ```
 npm install
 ```
@@ -15,20 +34,23 @@ npm run serve
 npm run build
 ```
 
-### Run your unit tests
+### Fix lint issues + Reformat code with Prettier
 ```
-npm run test:unit
-```
-
-### Run your end-to-end tests
-```
-npm run test:e2e
+npm run lin:fix
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## License
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+    Copyright 2022 Jeffrey Turns
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
