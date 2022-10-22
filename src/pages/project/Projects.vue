@@ -28,6 +28,7 @@ onMounted(() => {
                         class="rounded-xl">
                         <VImg
                             cover
+                            :aspect-ratio="0.1"
                             gradient="to top, rgba(0,0,0,.66), rgba(0,0,0,.12)"
                             :lazy-src="require('@/assets/placeholder.svg')"
                             :src="`https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/headers/image_0.png`">
