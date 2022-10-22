@@ -7,7 +7,7 @@
 <p>
 
 <p align="center">
-  <a href="https://argente.vercel.app"><strong>⚡ Browse &rarr;</strong></a>
+  <a href="https://jeffreyturns.vercel.app"><strong>⚡ Browse &rarr;</strong></a>
 </p>
 
 <p align="center">
