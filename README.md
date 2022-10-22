@@ -11,10 +11,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Jeffrey01596/argente-icons">
+  <a href="https://github.com/Jeffrey01596/jeffreyturns">
     <img src="https://img.shields.io/github/stars/Jeffrey01596/jeffreyturns" alt="Project Stars">
   </a>
-  <a href="https://github.com/Jeffrey01596/argente-icons/blob/main/LICENSE">
+  <a href="https://github.com/Jeffrey01596/jeffreyturns/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/Jeffrey01596/jeffreyturns" alt="License">
   </a>
 </p>
