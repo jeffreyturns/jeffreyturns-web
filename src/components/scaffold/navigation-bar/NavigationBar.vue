@@ -23,7 +23,7 @@ const barItemWidth = computed(() => `${window.innerWidth / NAVIGATION_ITEMS.leng
             :value="it.to"
             v-for="(it, i) in NAVIGATION_ITEMS"
             :key="i"
-            class="pill-btn"
+            class="pill-btn pill-btn-hover"
             :max-width="barItemWidth"
             :to="it.to">
             <div
@@ -43,6 +43,9 @@ const barItemWidth = computed(() => `${window.innerWidth / NAVIGATION_ITEMS.leng
 
 <style lang="scss">
 .pill-btn.v-btn:hover > .v-btn__overlay {
+    opacity: calc(0 * var(--v-theme-overlay-multiplier)) !important;
+}
+.pill-btn-hover.v-btn--active > .v-btn__overlay, .pill-btn-hover.v-btn[aria-haspopup=menu][aria-expanded=true] > .pill-btn-hover.v-btn__overlay {
     opacity: calc(0 * var(--v-theme-overlay-multiplier)) !important;
 }
 </style>
