@@ -52,7 +52,7 @@ watch(
 );
 
 function openSaveLife(): void {
-    window.open('https://savelife.in.ua/')
+    window.open('https://savelife.in.ua/');
 }
 </script>
 
@@ -119,7 +119,12 @@ function openSaveLife(): void {
                         class="me-2 my-4">
                         {{ it.title }}
                     </VBtn>
-                    <div class="text-center text-h6 text-decoration-underline text-primary" role="button" @click="openSaveLife()">#GloryToUkraine</div>
+                    <div
+                        class="text-center text-h6 text-decoration-underline text-primary"
+                        role="button"
+                        @click="openSaveLife()">
+                        #GloryToUkraine
+                    </div>
                 </VCol>
             </VRow>
         </VContainer>

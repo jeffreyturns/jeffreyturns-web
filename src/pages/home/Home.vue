@@ -60,7 +60,7 @@ const collection = [
         image: {
             title: 'Cloud Space',
             url: 'https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/headers/image_4.png'
-        },
+        }
         // button: {
         //     title: '$vuetify.common.explore',
         //     url: '/collections/imagination',
@@ -72,7 +72,7 @@ const collection = [
         image: {
             title: 'Sun Collpase',
             url: 'https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/headers/image_2.png'
-        },
+        }
         // button: {
         //     title: '$vuetify.common.explore',
         //     url: '/collections/imagination',
@@ -84,7 +84,7 @@ const collection = [
         image: {
             title: 'Undiscovered Flower',
             url: 'https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/headers/image_1.png'
-        },
+        }
         // button: {
         //     title: '$vuetify.common.explore',
         //     url: '/collections/imagination',
