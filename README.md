@@ -36,7 +36,7 @@ npm run build
 
 ### Fix lint issues + Reformat code with Prettier
 ```
-npm run lin:fix
+npm run lint:fix
 ```
 
 ## License
