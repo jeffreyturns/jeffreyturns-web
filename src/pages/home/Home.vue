@@ -7,6 +7,7 @@ import ExplorableImageCard from '@/components/explorable-image-card/ExplorableIm
 import { useFavoritesStore } from '@/stores/favorites';
 import ProjectCard from '@/components/project/project-card/ProjectCard.vue';
 import { useLocale, useDisplay } from 'vuetify/lib/framework.mjs';
+import ProjectCardSkeleton from '@/components/project/project-card/ProjectCardSkeleton.vue';
 
 export type RowColsArray = (number | undefined)[];
 
@@ -174,6 +175,10 @@ const collection = [
                     v-for="(it, i) in favoritesStore.list()"
                     :key="i"
                     :entry="it" />
+                <ProjectCardSkeleton
+                    :show="!favoritesStore.isLoaded()"
+                    v-for="it in 5"
+                    :key="it" />
             </VRow>
         </VContainer>
     </div>

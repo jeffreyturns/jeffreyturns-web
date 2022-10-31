@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
+import { useDisplay, useLocale } from 'vuetify/lib/framework.mjs';
+
 import { useProjectsStore } from '@/stores/projects';
 import ProjectCard from '@/components/project/project-card/ProjectCard.vue';
-import { useDisplay, useLocale } from 'vuetify/lib/framework.mjs';
+import ProjectCardSkeleton from '@/components/project/project-card/ProjectCardSkeleton.vue';
 
 const projectsStore = useProjectsStore();
 const display = useDisplay();
@@ -49,6 +51,10 @@ onMounted(() => {
                     v-for="(it, i) in projectsStore.list()"
                     :key="i"
                     :entry="it" />
+                <ProjectCardSkeleton
+                    :show="!projectsStore.isLoaded()"
+                    v-for="it in 5"
+                    :key="it" />
             </VRow>
         </VContainer>
     </div>
