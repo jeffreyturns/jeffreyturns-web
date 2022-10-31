@@ -58,75 +58,74 @@ function openSaveLife(): void {
 
 <template>
     <VContainer>
-        <VContainer>
-            <VRow>
-                <VCol
-                    :cols="12"
-                    :lg="6"
-                    :sm="12"
-                    :xs="12">
-                    <VImg
-                        class="rounded-pill"
-                        :lazy-src="require('@/assets/placeholder.svg')"
-                        cover
-                        :aspect-ratio="3 / 2"
-                        :src="require('@/assets/about@2x.png')" />
-                </VCol>
-                <VCol
-                    :cols="12"
-                    :lg="6"
-                    :sm="12"
-                    :xs="12">
-                    <VCard
-                        class="ma-2"
-                        color="transparent"
-                        v-for="(it, i) in items"
-                        :key="i">
-                        <div
-                            v-if="it.title != undefined"
-                            class="text-h5 font-weight-medium mb-2 mt-4"
-                            v-text="it.title" />
-                        <div
-                            v-if="it.text != undefined"
-                            class="text-body-1 mt-1"
-                            v-text="it.text" />
-                    </VCard>
-                </VCol>
-            </VRow>
-            <div class="text-center mt-6">
-                <WaveDivider />
-            </div>
-            <VRow>
-                <VCol>
-                    <VCard
-                        class="ma-2"
-                        color="transparent"
-                        v-for="(it, i) in items2"
-                        :key="i">
-                        <div
-                            v-if="it.title != undefined"
-                            class="text-h5 font-weight-medium mb-2 mt-4"
-                            v-text="it.title" />
-                        <div
-                            v-if="it.text != undefined"
-                            class="text-body-1 mt-1"
-                            v-text="it.text" />
-                    </VCard>
-                    <VBtn
-                        v-for="it in links"
-                        :key="it.title"
-                        :href="it.url"
-                        class="me-2 my-4">
-                        {{ it.title }}
-                    </VBtn>
+        <VRow>
+            <VCol
+                :cols="12"
+                :lg="6"
+                :sm="12"
+                :xs="12">
+                <VImg
+                    class="rounded-pill"
+                    :lazy-src="require('@/assets/placeholder.svg')"
+                    cover
+                    :max-width="800"
+                    :aspect-ratio="3 / 2"
+                    :src="require('@/assets/about@2x.png')" />
+            </VCol>
+            <VCol
+                :cols="12"
+                :lg="6"
+                :sm="12"
+                :xs="12">
+                <VCard
+                    class="ma-2"
+                    color="transparent"
+                    v-for="(it, i) in items"
+                    :key="i">
                     <div
-                        class="text-center text-h6 text-decoration-underline text-primary"
-                        role="button"
-                        @click="openSaveLife()">
-                        #GloryToUkraine
-                    </div>
-                </VCol>
-            </VRow>
-        </VContainer>
+                        v-if="it.title != undefined"
+                        class="text-h5 font-weight-medium mb-2 mt-4"
+                        v-text="it.title" />
+                    <div
+                        v-if="it.text != undefined"
+                        class="text-body-1 mt-1"
+                        v-text="it.text" />
+                </VCard>
+            </VCol>
+        </VRow>
+        <div class="text-center mt-6">
+            <WaveDivider />
+        </div>
+        <VRow>
+            <VCol>
+                <VCard
+                    class="ma-2"
+                    color="transparent"
+                    v-for="(it, i) in items2"
+                    :key="i">
+                    <div
+                        v-if="it.title != undefined"
+                        class="text-h5 font-weight-medium mb-2 mt-4"
+                        v-text="it.title" />
+                    <div
+                        v-if="it.text != undefined"
+                        class="text-body-1 mt-1"
+                        v-text="it.text" />
+                </VCard>
+                <VBtn
+                    v-for="it in links"
+                    :key="it.title"
+                    :href="it.url"
+                    class="me-2 my-4">
+                    {{ it.title }}
+                </VBtn>
+                <div
+                    class="text-center text-h6 text-decoration-underline text-primary"
+                    role="button"
+                    @click="openSaveLife()">
+                    #GloryToUkraine
+                </div>
+            </VCol>
+        </VRow>
     </VContainer>
 </template>
