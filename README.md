@@ -1,20 +1,20 @@
 <p align="center">
-  <img src="./.github/images/header.png" alt="header">
+  <img src="./.github/images/header@1x.png" alt="header">
 </p>
 
 <p align="center">
-  ✨ Perconal portfolio website written with Vue 3 Composition API + Vuetify 3 using Material You Guidelines ✨
+  ✨ Personal portfolio website written with Vue 3 Composition API + Vuetify 3 using Material You Guidelines ✨
 <p>
 
 <p align="center">
-  <a href="https://argente.vercel.app"><strong>⚡ Browse &rarr;</strong></a>
+  <a href="https://jeffreyturns.vercel.app"><strong>⚡ Browse &rarr;</strong></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Jeffrey01596/argente-icons">
+  <a href="https://github.com/Jeffrey01596/jeffreyturns">
     <img src="https://img.shields.io/github/stars/Jeffrey01596/jeffreyturns" alt="Project Stars">
   </a>
-  <a href="https://github.com/Jeffrey01596/argente-icons/blob/main/LICENSE">
+  <a href="https://github.com/Jeffrey01596/jeffreyturns/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/Jeffrey01596/jeffreyturns" alt="License">
   </a>
 </p>
@@ -36,7 +36,7 @@ npm run build
 
 ### Fix lint issues + Reformat code with Prettier
 ```
-npm run lin:fix
+npm run lint:fix
 ```
 
 ## License
