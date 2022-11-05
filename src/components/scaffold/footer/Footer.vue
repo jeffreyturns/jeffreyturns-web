@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import RailLogo from '@/components/scaffold/navigation-rail/rail-logo/RailLogo.vue';
+import WaveDividerFooter from '@/components/wave-divider/WaveDividerFooter.vue';
 
 export interface FooterItem {
     title: string;
@@ -52,7 +53,7 @@ const currentYear = () => new Date().getFullYear();
                         {{ it.title }}
                     </VBtn>
                 </VCol>
-                <VDivider class="my-2 mx-16" />
+                <WaveDividerFooter class="my-4" />
                 <VCol
                     class="text-center my-4 font-weight-medium"
                     :cols="12">
