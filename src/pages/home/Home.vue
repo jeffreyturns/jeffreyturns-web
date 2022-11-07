@@ -9,6 +9,8 @@ import ProjectCard from '@/components/project/project-card/ProjectCard.vue';
 import { useLocale, useDisplay } from 'vuetify/lib/framework.mjs';
 import ProjectCardSkeleton from '@/components/project/project-card/ProjectCardSkeleton.vue';
 
+import * as baseStyles from '@/styles/styles.css';
+
 export type RowColsArray = (number | undefined)[];
 
 const favoritesStore = useFavoritesStore();
@@ -148,13 +150,17 @@ const collection = [
                             {{ t('$vuetify.pages.home.bio.messageGoal') }}
                         </div>
                         <div class="my-2">
+                           <VHover v-slot="{ isHovering, props }">
                             <VBtn
                                 to="/about"
-                                variant="outlined"
                                 class="mt-2"
+                                :style="baseStyles.borderRadiusTransition"
+                                v-bind="props"
+                                :rounded="isHovering ? 'sm' : 'elg'"
                                 append-icon="arrow_right_alt">
                                 {{ t('$vuetify.pages.home.bio.action') }}
                             </VBtn>
+                           </VHover>
                         </div>
                     </VCard>
                 </VCol>

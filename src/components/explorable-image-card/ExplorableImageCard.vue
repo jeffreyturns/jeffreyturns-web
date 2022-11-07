@@ -29,7 +29,7 @@ const compProps = defineProps<ExplorableImageCardProps>();
         <VCard
             :style="baseStyles.borderRadiusTransition"
             v-bind="props"
-            :rounded="isHovering ? 'lg' : 'xl'"
+            :rounded="isHovering ? 'sm' : 'elg'"
             height="250px"
             class="mx-1">
             <VImg

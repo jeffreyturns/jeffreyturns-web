@@ -40,6 +40,7 @@ function chipColor(title: string) {
             v-bind="props"
             v-ripple
             :style="baseStyles.allTransition"
+            :rounded="isHovering ? 'elg' : 'lg'"
             :color="isHovering ? 'secondary-container' : 'surface-2'"
             width="400px"
             height="360px"
