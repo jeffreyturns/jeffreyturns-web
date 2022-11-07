@@ -59,7 +59,8 @@ export const routes: Array<RouteRecordRaw> = [
         name: 'project',
         meta: {
             title: 'project',
-            isRoot: false
+            isRoot: false,
+            transition: 'slide-x'
         },
         component: () => import('@/pages/project/Project.vue')
     },

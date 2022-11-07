@@ -1,0 +1,108 @@
+$slide-distance: 96px;
+$slide-distance-minus: -96px;
+
+$forward-timing-duration: 400ms;
+$backward-timing-duration: 200ms;
+
+$forward-cubic-bezier: cubic-bezier(0, 0, 0.2, 1);
+$backward-cubic-bezier: cubic-bezier(0.4, 0, 1, 1);
+
+
+@keyframes forward-y-anim-in-enter {
+    from {
+        transform: translateY($slide-distance-minus);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes backward-y-anim-in-exit {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY($slide-distance);
+        opacity: 0;
+    }
+}
+
+@keyframes forward-x-anim-in-enter {
+    from {
+        transform: translateX($slide-distance);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes backward-x-anim-in-exit {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX($slide-distance-minus);
+        opacity: 0;
+    }
+}
+
+// reverse
+
+@keyframes forward-x-reverse-anim-in-enter {
+    from {
+        transform: translateX($slide-distance-minus);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes backward-x-reverse-anim-in-exit {
+    from {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX($slide-distance);
+        opacity: 0;
+    }
+}
+
+.slide-y-enter-active {
+    animation: forward-y-anim-in-enter $forward-timing-duration $forward-cubic-bezier;
+}
+
+.slide-y-leave-active {
+    animation: backward-y-anim-in-exit $backward-timing-duration $backward-cubic-bezier;
+}
+
+.slide-x-enter-active {
+    animation: forward-x-anim-in-enter $forward-timing-duration $forward-cubic-bezier;
+}
+
+.slide-x-leave-active {
+    animation: backward-x-anim-in-exit $backward-timing-duration $backward-cubic-bezier;
+}
+
+/// reverse
+
+.slide-x-reverse-enter-active {
+    animation: forward-x-reverse-anim-in-enter $forward-timing-duration $forward-cubic-bezier;
+}
+.slide-x-reverse-leave-active {
+    animation: backward-x-reverse-anim-in-exit $backward-timing-duration $backward-cubic-bezier;
+}
