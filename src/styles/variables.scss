@@ -4,5 +4,15 @@ $override-font: 'Inter', serif;
     $button-text-transform: none,
     $navigation-drawer-border-color: transparent,
     $body-font-family: $override-font,
-    $img-preload-filter: none
+    $img-preload-filter: none,
+    $rounded: (
+        0: 0,
+        'esm': 4px,
+        'sm': 8px,
+        'md': 12px,
+        'lg': 16px,
+        'elg': 28px,
+        'pill': 9999px,
+        'full': 50%
+)
 );

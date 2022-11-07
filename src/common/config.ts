@@ -38,7 +38,7 @@ export const components = {
         color: 'secondary'
     },
     VChip: {
-        rounded: 'lg'
+        rounded: 'sm'
     },
     VCombobox: {
         variant: 'filled'
