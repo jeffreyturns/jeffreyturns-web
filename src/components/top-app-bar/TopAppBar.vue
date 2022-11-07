@@ -28,7 +28,7 @@ function elevationColor(reversed = false) {
 const rootDestonation = computed((): boolean => route.meta?.isRoot as boolean);
 
 function goBack(): void {
-    route.meta?.isRoot ? null : window.history.length < 2 ? router.go(-1) : router.push('/');
+    route.meta?.isRoot ? null : window.history.length > 2 ? router.go(-1) : router.push('/');
 }
 </script>
 

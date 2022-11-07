@@ -51,7 +51,7 @@ function railListItemHeight() {
 }
 
 function goBack(): void {
-    route.meta?.isRoot ? null : window.history.length < 2 ? router.go(-1) : router.push('/');
+    route.meta?.isRoot ? null : window.history.length > 2 ? router.go(-1) : router.push('/');
 }
 
 function goHome(): void {
@@ -111,7 +111,7 @@ function navigate(path: RouteLocationRaw): void {
                             :style="
                                 display.xlAndUp.value || display.mdAndDown.value
                                     ? baseStyles.allTransition
-                                    : ['justify-self: center; justify-content: center;', baseStyles.allTransition]
+                                    : ['justify-self: center; justify-content: center;']
                             "
                             :density="railDensity()"
                             :value="item"
