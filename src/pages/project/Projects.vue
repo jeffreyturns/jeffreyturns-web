@@ -18,16 +18,14 @@ onMounted(() => {
 
 <template>
     <div>
-        <VContainer
-            full-height
-            fluid>
+        <VContainer full-height>
             <VRow
                 align="center"
                 justify="center">
                 <VCol :cols="12">
                     <VCard
-                        height="370px"
-                        class="rounded-xl">
+                        height="600px"
+                        rounded="xl">
                         <VImg
                             cover
                             :aspect-ratio="0.1"

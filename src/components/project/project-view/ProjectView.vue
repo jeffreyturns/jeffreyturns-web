@@ -14,17 +14,20 @@ const props = withDefaults(defineProps<ProjectViewProps>(), {
 </script>
 
 <template>
-    <div>
+    <VContainer class="fill-height">
         <VRow>
             <VCol
                 :cols="12"
                 :lg="6"
                 :sm="12"
                 :xs="12">
-                <VCard class="h-100 rounded-xl d-flex flex-column justify-center pa-12">
+                <VCard
+                    rounded="xl"
+                    class="h-100 d-flex flex-column justify-center pa-12"
+                    color="surface-2">
                     <div
                         :class="`${display.xs.value ? 'text-h2' : 'text-h1'}`"
-                        class="font-weight-medium my-4"
+                        class="font-weight-bold mb-10"
                         v-text="props.entry.title" />
                     <div
                         :class="`${display.xs.value ? 'text-h6' : 'text-h5'}`"
@@ -52,8 +55,9 @@ const props = withDefaults(defineProps<ProjectViewProps>(), {
                 :sm="12"
                 :xs="12">
                 <VCard
-                    height="370px"
-                    class="rounded-xl bordered-alpha">
+                    rounded="xl"
+                    height="600px"
+                    class="bordered-alpha">
                     <VImg
                         cover
                         :aspect-ratio="0.1"
@@ -62,39 +66,38 @@ const props = withDefaults(defineProps<ProjectViewProps>(), {
                 </VCard>
             </VCol>
         </VRow>
-        <VContainer>
-            <VRow
-                align="center"
-                justify="center">
-                <VCol>
-                    <VCard
-                        color="surface-variant"
-                        v-for="(it, i) in props.entry.sections"
-                        :key="i"
-                        class="ma-4">
-                        <VCard class="bordered-alpha">
-                            <VImg
-                                :aspect-ratio="12 / 9"
-                                cover
-                                max-height="799"
-                                :lazy-src="require('@/assets/placeholder.svg')"
-                                :src="`https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/${it.mockup}`" />
-                        </VCard>
-                        <VCardItem v-if="it.title != ''">
-                            <div
-                                class="text-h3 mt-4 mb-2"
-                                v-text="it.title" />
-                        </VCardItem>
+        <VCol class="d-flex justify-center">
+            <div>
+                <VCard
+                    color="surface-variant"
+                    v-for="(it, i) in props.entry.sections"
+                    :key="i"
+                    :max-width="1064"
+                    rounded="xl"
+                    class="my-4">
+                    <VCardItem v-if="it.title != ''">
+                        <div
+                            class="text-h3 mt-4 mb-2 font-weight-medium"
+                            v-text="it.title" />
+                    </VCardItem>
 
-                        <VCardItem v-if="it.title != ''">
-                            <div
-                                v-if="it.description != ''"
-                                class="text-h6 mt-2 mb-4"
-                                v-text="it.description" />
-                        </VCardItem>
+                    <VCardItem v-if="it.title != ''">
+                        <div
+                            v-if="it.description != ''"
+                            class="text-h6 mt-2 mb-4 text-medium-emphasis"
+                            v-text="it.description" />
+                    </VCardItem>
+                    <VCard
+                        class="bordered-alpha"
+                        rounded="xl">
+                        <VImg
+                            :aspect-ratio="12 / 9"
+                            cover
+                            :lazy-src="require('@/assets/placeholder.svg')"
+                            :src="`https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/${it.mockup}`" />
                     </VCard>
-                </VCol>
-            </VRow>
-        </VContainer>
-    </div>
+                </VCard>
+            </div>
+        </VCol>
+    </VContainer>
 </template>

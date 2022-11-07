@@ -21,7 +21,7 @@ const image: CSSProperties = {
 
 const title: CSSProperties = {
     height: '32px',
-    width: '64px'
+    width: '100px'
 };
 
 const description1: CSSProperties = {
@@ -51,15 +51,15 @@ const chip: CSSProperties = {
         <VCardItem>
             <div
                 :style="title"
-                class="bg-surface-4 rounded-lg" />
+                class="bg-surface-4 rounded-pill" />
         </VCardItem>
 
         <div
             :style="description1"
-            class="bg-surface-4 rounded-lg ms-4" />
+            class="bg-surface-4 rounded-pill ms-4" />
         <div
             :style="description2"
-            class="bg-surface-4 rounded-lg ms-4 mt-1 mb-1" />
+            class="bg-surface-4 rounded-pill ms-4 mt-1 mb-1" />
 
         <VCardActions class="ms-2">
             <div

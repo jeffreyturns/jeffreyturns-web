@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router';
 import { useProjectStore } from '@/stores/project';
 
 import ProjectView from '@/components/project/project-view/ProjectView.vue';
+import ProjectViewSkeleton from '@/components/project/project-view/ProjectViewSkeleton.vue';
 
 const projectStore = useProjectStore();
 const route = useRoute();
@@ -20,8 +21,7 @@ onUnmounted(() => {
 
 <template>
     <div>
-        <ProjectView
-            v-if="projectStore.isLoaded()"
-            :entry="projectStore.list()" />
+        <ProjectViewSkeleton v-if="!projectStore.isLoaded()" />
+        <ProjectView :entry="projectStore.list()" />
     </div>
 </template>
