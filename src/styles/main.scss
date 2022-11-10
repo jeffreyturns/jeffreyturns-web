@@ -1,5 +1,6 @@
 @import './scss/scroll.scss';
 @import './scss/override.scss';
+@import './scss//variable-font.scss';
 
 .filled-symbol {
     font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -10,11 +11,11 @@
 // Animated classes
 .to-filled-symbol {
     font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    animation: symbol-anim-start .2s linear;
+    animation: symbol-anim-start 200ms cubic-bezier(0.2, 0, 0, 1);
 }
 .to-outlined-symbol {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    animation: symbol-anim-end .2s linear;
+    animation: symbol-anim-end 200ms cubic-bezier(0.2, 0, 0, 1);
 }
 
 @keyframes symbol-anim-start {

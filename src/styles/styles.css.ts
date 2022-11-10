@@ -1,8 +1,8 @@
 import { CSSProperties } from 'vue';
 
-const TRANSITION_TIMING_MS = '200ms';
+const TRANSITION_TIMING_MS = '300ms';
 
-const CUBIC_BEZIER = 'cubic-bezier(0, 0, 0.2, 1)';
+const CUBIC_BEZIER = 'cubic-bezier(0.2, 0, 0, 1)';
 
 export const bgColorTransition: CSSProperties = {
     transition: `background-color ${TRANSITION_TIMING_MS} ${CUBIC_BEZIER}`
