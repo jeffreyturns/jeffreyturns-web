@@ -6,6 +6,7 @@ import IndeterminateLoader from '@/components/indeterminate-loader/Indeterminate
 import SearchBox from '@/components/top-app-bar/search-box/SearchBox.vue';
 import ThemeMenu from '@/components/menus/ThemeMenu.vue';
 import LocaleMenu from '@/components/menus/LocaleMenu.vue';
+import Interact from '@/components/material-3/interact/Interact.vue';
 
 import { useGlobalStore } from '@/stores/global';
 import { useScrollStore } from '@/stores/scroll';
@@ -37,17 +38,37 @@ function goBack(): void {
         app
         :color="elevationColor()"
         :style="baseStyles.bgColorTransition">
-        <VAppBarNavIcon
-            v-if="!rootDestonation && !display.lgAndUp.value"
-            @click="goBack()"
-            icon="arrow_back"
-            color="on-surface" />
+        <VHover v-slot="{ isHovering, props }">
+            <Interact
+                v-slot="{ isInteracted }"
+                class="ms-1">
+                <VAppBarNavIcon
+                    v-if="!rootDestonation && !display.lgAndUp.value"
+                    :rounded="isInteracted ? 'md' : 'full'"
+                    :style="baseStyles.borderRadiusTransition"
+                    :class="[isHovering ? 'md-sym-to-600' : 'md-sym-to-400']"
+                    @click="goBack()"
+                    icon="arrow_back"
+                    color="on-surface"
+                    v-bind="props" />
+            </Interact>
+        </VHover>
 
-        <VAppBarNavIcon
-            v-if="!display.xs.value && !display.lgAndUp.value && rootDestonation"
-            @click="globalStore.rail = true"
-            icon="menu"
-            color="on-surface" />
+        <VHover v-slot="{ isHovering, props }">
+            <Interact
+                v-slot="{ isInteracted }"
+                class="ms-1">
+                <VAppBarNavIcon
+                    v-if="!display.xs.value && !display.lgAndUp.value && rootDestonation"
+                    @click="globalStore.rail = true"
+                    :rounded="isInteracted ? 'md' : 'full'"
+                    :style="baseStyles.borderRadiusTransition"
+                    :class="[isHovering ? 'md-sym-to-600' : 'md-sym-to-400']"
+                    icon="menu"
+                    color="on-surface"
+                    v-bind="props" />
+            </Interact>
+        </VHover>
 
         <VToolbarTitle
             class="font-weight-medium"

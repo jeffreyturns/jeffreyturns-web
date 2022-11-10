@@ -1,17 +1,20 @@
 <script setup lang="ts">
 import { mergeProps, ref } from 'vue';
+import { useRoute } from 'vue-router';
+
+import { useLocale } from 'vuetify/lib/framework.mjs';
+import { useAppTitle } from '@/composables/useAppTitle';
 
 import { menu as menuConfig } from '@/common/components-config';
 import { Language, changeLocale, LANGUAGE_VALUES } from '@/composables/useLocaleManager';
-import { useLocale } from 'vuetify/lib/framework.mjs';
-import { useAppTitle } from '@/composables/useAppTitle';
-import { useRoute } from 'vue-router';
+
+import * as baseStyles from '@/styles/styles.css';
+import Interact from '@/components/material-3/interact/Interact.vue';
 
 const locale = useLocale();
 const route = useRoute();
 
 const model = ref(false);
-const anim = ref('');
 
 function change(value: Language) {
     changeLocale(value);
@@ -30,12 +33,20 @@ function change(value: Language) {
                 location="top"
                 :open-delay="450">
                 <template v-slot:activator="{ props: tooltip }">
-                    <VBtn
-                        class="ms-1"
-                        icon="translate"
-                        :class="anim"
-                        :color="model ? 'primary' : 'on-surface'"
-                        v-bind="mergeProps(menu, tooltip)" />
+                    <VHover v-slot="{ isHovering, props }">
+                        <Interact
+                            v-slot="{ isInteracted }"
+                            :is-inline-box-container="true">
+                            <VBtn
+                                class="ms-1"
+                                :rounded="isInteracted ? 'md' : 'full'"
+                                :style="baseStyles.borderRadiusTransition"
+                                icon="translate"
+                                :class="[isHovering ? 'md-sym-to-600' : 'md-sym-to-400']"
+                                :color="model ? 'primary' : 'on-surface'"
+                                v-bind="mergeProps(props, menu, tooltip)" />
+                        </Interact>
+                    </VHover>
                 </template>
                 <span>{{ locale.t('$vuetify.tooltips.language') }}</span>
             </VTooltip>

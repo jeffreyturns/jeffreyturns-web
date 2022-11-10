@@ -4,8 +4,9 @@ import { watch } from 'vue';
 import '@/styles/main.scss';
 
 import { useRoute } from 'vue-router';
+import { useLocale } from 'vuetify/lib/framework.mjs';
 import { useAppTitle } from '@/composables/useAppTitle';
-import { useSnack } from '@/composables/useSnack';
+// import { useSnack } from '@/composables/useSnack';
 
 import { useGlobalStore } from '@/stores/global';
 
@@ -27,14 +28,13 @@ import FAB from '@/components/scaffold/fab/FAB.vue';
 import Footer from '@/components/scaffold/footer/Footer.vue';
 import ThemeProvider from '@/composables/provider/theme-provider/ThemeProvider.vue';
 import LocaleProvider from '@/composables/provider/locale-provider/LocaleProvider.vue';
-import { useLocale } from 'vuetify/lib/framework.mjs';
 
 const inRouteRecord = (record: string, tragetRoutesName: readonly string[]) => {
     return tragetRoutesName.includes(record || '');
 };
 
 const route = useRoute();
-const snack = useSnack();
+// const snack = useSnack();
 const locale = useLocale();
 const globalStore = useGlobalStore();
 

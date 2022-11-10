@@ -9,7 +9,7 @@ import ProjectCard from '@/components/project/project-card/ProjectCard.vue';
 import { useLocale, useDisplay } from 'vuetify/lib/framework.mjs';
 import ProjectCardSkeleton from '@/components/project/project-card/ProjectCardSkeleton.vue';
 
-import * as baseStyles from '@/styles/styles.css';
+import BioCard from '@/components/bio-card/BioCard.vue';
 
 export type RowColsArray = (number | undefined)[];
 
@@ -20,40 +20,6 @@ const { t } = useLocale();
 onMounted(() => {
     favoritesStore.fetchData();
 });
-
-const welcomeWords: string[] = [
-    'Welcome',
-    'I mirëpritur',
-    'Dobrodošli',
-    'Dobrodošli',
-    'Vitejte',
-    'Welkom',
-    'Tere tulemast',
-    'Tervetuloa',
-    'Bienvenue',
-    'Herzlich willkommen',
-    'Καλως ΗΡΘΑΤΕ',
-    'Üdvözöljük',
-    'Velkominn',
-    'Fáilte',
-    'Benvenuto',
-    'Добредојден',
-    'Merhba',
-    'Velkommen',
-    'Witamy',
-    'Bem-vinda',
-    'Bine ati venit',
-    'Bienvenidos',
-    'Välkommen',
-    'Croeso',
-    'באַגריסן',
-    'ようこそ',
-    'Ласкаво просимо'
-];
-
-function welcomeWord(): string {
-    return `${welcomeWords[Math.floor(Math.random() * welcomeWords.length)]}!`;
-}
 
 const collectionRow: RowColsArray = [4, 2, 6];
 
@@ -139,30 +105,7 @@ const collection = [
                 <VCol
                     :lg="5"
                     :sm="12">
-                    <VCard class="pa-3">
-                        <div
-                            :class="`${display.xs.value ? 'text-h3' : 'text-h2'}`"
-                            class="font-weight-bold mb-4"
-                            v-text="welcomeWord()" />
-                        <div class="text-subimageTitle-1">
-                            {{ t('$vuetify.pages.home.bio.messageMe') }}
-                            <div class="ma-2" />
-                            {{ t('$vuetify.pages.home.bio.messageGoal') }}
-                        </div>
-                        <div class="my-2">
-                           <VHover v-slot="{ isHovering, props }">
-                            <VBtn
-                                to="/about"
-                                class="mt-2"
-                                :style="baseStyles.borderRadiusTransition"
-                                v-bind="props"
-                                :rounded="isHovering ? 'sm' : 'elg'"
-                                append-icon="arrow_right_alt">
-                                {{ t('$vuetify.pages.home.bio.action') }}
-                            </VBtn>
-                           </VHover>
-                        </div>
-                    </VCard>
+                    <BioCard />
                 </VCol>
             </VRow>
         </VContainer>

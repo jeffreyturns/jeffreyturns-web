@@ -71,8 +71,7 @@ const subtitleSection2: CSSProperties = {
                 <VCard
                     rounded="xl"
                     height="600px"
-                    class="bordered-alpha">
-                </VCard>
+                    class="bordered-alpha"></VCard>
             </VCol>
         </VRow>
         <VCol class="d-flex justify-center">
@@ -94,9 +93,11 @@ const subtitleSection2: CSSProperties = {
                             :style="subtitleSection2"
                             class="bg-surface-3 rounded-pill mt-1" />
                     </div>
-                    <VCard rounded="xl" color="surface-4" class="w-100" :height="799"
-                    >
-                    </VCard>
+                    <VCard
+                        rounded="xl"
+                        color="surface-4"
+                        class="w-100"
+                        :height="799"></VCard>
                 </VCard>
             </div>
         </VCol>

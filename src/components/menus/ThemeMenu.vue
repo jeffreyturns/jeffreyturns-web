@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { mergeProps, ref, watch } from 'vue';
+import { mergeProps, ref } from 'vue';
 
 import { getPrefTheme, setPrefTheme, Theme, toThemeEnums, useThemeManager, THEME_VALUES } from '@/composables/useThemeManager';
 
@@ -7,24 +7,16 @@ import { useLocale, useTheme as useFrameworkTheme } from 'vuetify/lib/framework.
 
 import { menu as menuConfig } from '@/common/components-config';
 
+import * as baseStyles from '@/styles/styles.css';
+
+import Interact from '@/components/material-3/interact/Interact.vue';
+
 const fmTheme = useFrameworkTheme();
 const { t } = useLocale();
 
 const currentTheme = ref(toThemeEnums(getPrefTheme()));
 
 const model = ref(false);
-const anim = ref('');
-
-watch(
-    model,
-    async () => {
-        anim.value = model.value ? 'to-filled-symbol' : 'to-outlined-symbol';
-    },
-    {
-        immediate: false,
-        deep: false
-    }
-);
 
 function getIcon(): string {
     switch (currentTheme.value) {
@@ -60,12 +52,20 @@ function change(value: Theme) {
                 location="top"
                 :open-delay="450">
                 <template v-slot:activator="{ props: tooltip }">
-                    <VBtn
-                        class="ms-1"
-                        :icon="getIcon()"
-                        :class="anim"
-                        :color="model ? 'primary' : 'on-surface'"
-                        v-bind="mergeProps(menu, tooltip)" />
+                    <VHover v-slot="{ isHovering, props }">
+                        <Interact
+                            v-slot="{ isInteracted }"
+                            :is-inline-box-container="true">
+                            <VBtn
+                                class="ms-1"
+                                :rounded="isInteracted ? 'md' : 'full'"
+                                :style="baseStyles.borderRadiusTransition"
+                                :icon="getIcon()"
+                                :class="[isHovering ? 'md-sym-to-600' : 'md-sym-to-400']"
+                                :color="model ? 'primary' : 'on-surface'"
+                                v-bind="mergeProps(props, menu, tooltip)" />
+                        </Interact>
+                    </VHover>
                 </template>
                 <span>{{ t('$vuetify.tooltips.theme') }}</span>
             </VTooltip>

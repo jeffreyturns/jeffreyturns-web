@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import { useLocale } from 'vuetify/lib/framework.mjs';
+import { useDisplay, useLocale } from 'vuetify/lib/framework.mjs';
 import WaveDivider from '@/components/wave-divider/WaveDivider.vue';
 import { FooterItem } from '@/components/scaffold/footer/Footer.vue';
 
@@ -13,6 +13,8 @@ const { t, current } = useLocale();
 
 const items = ref<Array<TextColumn>>([]);
 const items2 = ref<Array<TextColumn>>([]);
+
+const display = useDisplay();
 
 const links: Array<FooterItem> = [
     {
@@ -59,25 +61,44 @@ function openSaveLife(): void {
 <template>
     <VContainer>
         <VRow>
-            <VCol
-                :cols="12"
-                :lg="6"
-                :sm="12"
-                :xs="12">
-                <VImg
-                    class="rounded-pill"
-                    :lazy-src="require('@/assets/placeholder.svg')"
-                    cover
-                    :max-width="800"
-                    :aspect-ratio="3 / 2"
-                    :src="require('@/assets/about@2x.png')" />
+            <VCol :cols="12">
+                <div class="text-center rounded-xl d-flex flex-column justify-center pa-12">
+                    <div
+                        :class="`${display.xs.value ? 'text-h2' : 'text-h1'}`"
+                        class="font-weight-medium my-4 text-high-emphasis"
+                        v-text="`Про мене`" />
+                    <div
+                        :class="`${display.xs.value ? 'text-h6' : 'text-h5'}`"
+                        class="mb-4 text-medium-emphasis"
+                        v-text="`Корисна інфоримація і не тільки`" />
+                </div>
             </VCol>
-            <VCol
-                :cols="12"
-                :lg="6"
-                :sm="12"
-                :xs="12">
+            <!-- <VCol :cols="12">
+                    <VCard
+                        height="600px"
+                        class="rounded-pill">
+                        <VImg
+                            cover
+                            :aspect-ratio="0.1"
+                            gradient="to top, rgba(0,0,0,.66), rgba(0,0,0,.12)"
+                            :lazy-src="require('@/assets/placeholder.svg')"
+                            :src="require('@/assets/about@2x.png')">
+                            <div class="h-100 text-center d-flex flex-column justify-center pa-12">
+                                <div
+                                    :class="`${display.xs.value ? 'text-h2' : 'text-h1'}`"
+                                    class="font-weight-medium my-4 text-white"
+                                    v-text="`Про мене`" />
+                                <div
+                                    :class="`${display.xs.value ? 'text-h6' : 'text-h5'}`"
+                                    class="mb-4 text-white"
+                                    v-text="t('$vuetify.pages.projects.header.subtitle')" />
+                            </div>
+                        </VImg>
+                    </VCard>
+                </VCol> -->
+            <VCol>
                 <VCard
+                    :rounded="0"
                     class="ma-2"
                     color="transparent"
                     v-for="(it, i) in items"
@@ -99,6 +120,7 @@ function openSaveLife(): void {
         <VRow>
             <VCol>
                 <VCard
+                    :rounded="0"
                     class="ma-2"
                     color="transparent"
                     v-for="(it, i) in items2"

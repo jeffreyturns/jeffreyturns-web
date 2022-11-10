@@ -3,6 +3,7 @@ import { RouteLocationRaw, useRoute, useRouter } from 'vue-router';
 import { useDisplay, useLocale } from 'vuetify/lib/framework.mjs';
 
 import RailLogo from '@/components/scaffold/navigation-rail/rail-logo/RailLogo.vue';
+import Interact from '@/components/material-3/interact/Interact.vue';
 
 import { NAVIGATION_ITEMS } from '@/stores/global';
 
@@ -73,27 +74,40 @@ function navigate(path: RouteLocationRaw): void {
         <div
             class="ps-4"
             :style="styles.fullHeight">
-            <VAppBarNavIcon
-                v-if="!rootDestonation() && !display.mdAndDown.value"
-                @click="goBack()"
-                icon="arrow_back"
-                color="on-surface" />
+            <VHover v-slot="{ isHovering, props }">
+                <Interact v-slot="{ isInteracted }">
+                    <VAppBarNavIcon
+                        v-if="!rootDestonation() && !display.mdAndDown.value"
+                        @click="goBack()"
+                        :rounded="isInteracted ? 'md' : 'full'"
+                        :style="baseStyles.borderRadiusTransition"
+                        :class="[isHovering ? 'md-sym-to-600' : 'md-sym-to-400']"
+                        v-bind="props"
+                        icon="arrow_back"
+                        color="on-surface" />
 
-            <VFadeTransition :leave-absolute="true">
-                <VAppBarNavIcon
-                    v-if="rootDestonation() && !display.mdAndDown.value"
-                    color="transparent"
-                    @click="goHome()">
-                    <RailLogo />
-                </VAppBarNavIcon>
-            </VFadeTransition>
+                    <VAppBarNavIcon
+                        v-if="rootDestonation() && !display.mdAndDown.value"
+                        color="transparent"
+                        :rounded="isInteracted ? 'md' : 'full'"
+                        :style="baseStyles.borderRadiusTransition"
+                        v-bind="props"
+                        @click="goHome()">
+                        <RailLogo />
+                    </VAppBarNavIcon>
 
-            <VAppBarNavIcon
-                v-if="display.mdAndDown.value"
-                @click="globalStore.rail = !globalStore.rail"
-                variant="text"
-                color="on-surface"
-                icon="menu_open" />
+                    <VAppBarNavIcon
+                        v-if="display.mdAndDown.value"
+                        @click="globalStore.rail = !globalStore.rail"
+                        variant="text"
+                        :rounded="isInteracted ? 'md' : 'full'"
+                        :style="baseStyles.borderRadiusTransition"
+                        :class="[isHovering ? 'md-sym-to-600' : 'md-sym-to-400']"
+                        v-bind="props"
+                        color="on-surface"
+                        icon="menu_open" />
+                </Interact>
+            </VHover>
         </div>
         <VRow
             align="center"
