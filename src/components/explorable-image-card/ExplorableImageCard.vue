@@ -30,7 +30,7 @@ const compProps = defineProps<ExplorableImageCardProps>();
             :style="baseStyles.borderRadiusTransition"
             v-bind="props"
             :rounded="isHovering ? 'sm' : 'elg'"
-            height="250px"
+            :height="250"
             class="mx-1">
             <VImg
                 cover
