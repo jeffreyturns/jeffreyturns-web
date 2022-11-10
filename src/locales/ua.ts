@@ -66,6 +66,7 @@ export default {
         about: {
             documentTitle: 'Про мене',
             railTitle: 'Про мене',
+            subtitleHeader: 'Корисна інформація і не тільки',
             textColumn: {
                 aboutText:
                     "Привіт, я Jeffrey Turns. В даний час навчаюсь на комп'ютерного-інженера. Розробка під Android — це моє хобі, але я хочу перетворити це на роботу. Також мене цікавлять конкурси Telegram та веб-розробка.",

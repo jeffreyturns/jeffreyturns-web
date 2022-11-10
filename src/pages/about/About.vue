@@ -66,36 +66,13 @@ function openSaveLife(): void {
                     <div
                         :class="`${display.xs.value ? 'text-h2' : 'text-h1'}`"
                         class="font-weight-medium my-4 text-high-emphasis"
-                        v-text="`Про мене`" />
+                        v-text="t('$vuetify.pages.about.documentTitle')" />
                     <div
                         :class="`${display.xs.value ? 'text-h6' : 'text-h5'}`"
                         class="mb-4 text-medium-emphasis"
-                        v-text="`Корисна інфоримація і не тільки`" />
+                        v-text="t('$vuetify.pages.about.subtitleHeader')"  />
                 </div>
             </VCol>
-            <!-- <VCol :cols="12">
-                    <VCard
-                        height="600px"
-                        class="rounded-pill">
-                        <VImg
-                            cover
-                            :aspect-ratio="0.1"
-                            gradient="to top, rgba(0,0,0,.66), rgba(0,0,0,.12)"
-                            :lazy-src="require('@/assets/placeholder.svg')"
-                            :src="require('@/assets/about@2x.png')">
-                            <div class="h-100 text-center d-flex flex-column justify-center pa-12">
-                                <div
-                                    :class="`${display.xs.value ? 'text-h2' : 'text-h1'}`"
-                                    class="font-weight-medium my-4 text-white"
-                                    v-text="`Про мене`" />
-                                <div
-                                    :class="`${display.xs.value ? 'text-h6' : 'text-h5'}`"
-                                    class="mb-4 text-white"
-                                    v-text="t('$vuetify.pages.projects.header.subtitle')" />
-                            </div>
-                        </VImg>
-                    </VCard>
-                </VCol> -->
             <VCol>
                 <VCard
                     :rounded="0"

@@ -65,6 +65,7 @@ export default {
         about: {
             documentTitle: 'About',
             railTitle: 'About',
+            subtitleHeader: 'Useful information and not only',
             textColumn: {
                 aboutText:
                     "Hello, i'm Jeffrey Turns. Currently studying as a computer engineer. Android development is my hobby but i want to turn it into a job. I'm also intrested in Telegram contests and web-development.",
