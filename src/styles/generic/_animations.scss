@@ -1,0 +1,36 @@
+@keyframes md3-symbol-600-400 {
+    0% {
+      font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 24;
+    }
+    100% {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+  }
+  
+  @keyframes md3-symbol-400-600 {
+    0% {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+    100% {
+      font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 24;
+    }
+  }
+  
+  @keyframes md3-symbol-to-filled {
+    0% {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+    100% {
+      font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+  }
+  
+  @keyframes symbol-anim-to-outlined {
+    0% {
+      font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+    100% {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+  }
+  

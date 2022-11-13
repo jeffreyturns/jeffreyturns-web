@@ -5,8 +5,8 @@ import '@/styles/main.scss';
 
 import { useRoute } from 'vue-router';
 import { useLocale } from 'vuetify/lib/framework.mjs';
-import { useAppTitle } from '@/composables/useAppTitle';
-// import { useSnack } from '@/composables/useSnack';
+import { useAppTitle } from '@/composables/title';
+// import { useSnack } from '@/composables/snack';
 
 import { useGlobalStore } from '@/stores/global';
 
@@ -26,8 +26,8 @@ import ScrollContainer from '@/components/scroll-container/ScrollContainer.vue';
 import PageTransition from '@/components/scaffold/page-transition/PageTransition.vue';
 import FAB from '@/components/scaffold/fab/FAB.vue';
 import Footer from '@/components/scaffold/footer/Footer.vue';
-import ThemeProvider from '@/composables/provider/theme-provider/ThemeProvider.vue';
-import LocaleProvider from '@/composables/provider/locale-provider/LocaleProvider.vue';
+import ThemeProvider from '@/components/providers/theme-provider/ThemeProvider.vue';
+import LocaleProvider from '@/components/providers/locale-provider/LocaleProvider.vue';
 
 const inRouteRecord = (record: string, tragetRoutesName: readonly string[]) => {
     return tragetRoutesName.includes(record || '');

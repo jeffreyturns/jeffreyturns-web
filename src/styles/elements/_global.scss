@@ -1,0 +1,10 @@
+.bordered {
+    border: thin solid rgb(var(--v-theme-outline)) !important;
+    border-width: 1px;
+  }
+  
+  .bordered-alpha {
+    border: thin solid rgba(var(--v-theme-outline), 0.12) !important;
+    border-width: 1px !important;
+  }
+  

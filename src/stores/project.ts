@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 
 import { defineStore } from 'pinia';
-import { httpJson } from '@/api/base';
+import { getProject } from '@/api/reqests';
 
 type Path = string;
 
@@ -69,7 +69,7 @@ export const useProjectStore = defineStore('project', () => {
     async function fetch(project: string): Promise<void> {
         if (isSameProject(project)) return;
 
-        const data = await httpJson<Project>(`/project?name=${project}`);
+        const data = await getProject(project);
         state.value.project = data;
     }
 

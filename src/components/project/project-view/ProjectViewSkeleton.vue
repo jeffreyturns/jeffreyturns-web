@@ -51,16 +51,16 @@ const subtitleSection2: CSSProperties = {
                     color="surface-2">
                     <div
                         :style="headerTitle"
-                        class="bg-surface-1 rounded-pill" />
+                        class="bg-surface-variant rounded-pill" />
                     <div
                         :style="headerSubtitle1"
-                        class="bg-surface-1 rounded-pill mt-12" />
+                        class="bg-surface-variant rounded-pill mt-12" />
                     <div
                         :style="headerSubtitle2"
-                        class="bg-surface-1 rounded-pill mt-1" />
+                        class="bg-surface-variant rounded-pill mt-1" />
                     <div
                         :style="headerSubtitle3"
-                        class="bg-surface-1 rounded-pill mt-1" />
+                        class="bg-surface-variant rounded-pill mt-1" />
                 </VCard>
             </VCol>
             <VCol
@@ -85,17 +85,17 @@ const subtitleSection2: CSSProperties = {
                     <div class="pa-4">
                         <div
                             :style="titleSection"
-                            class="bg-surface-3 rounded-pill" />
+                            class="bg-surface-1 rounded-pill" />
                         <div
                             :style="subtitleSection1"
-                            class="bg-surface-3 rounded-pill mt-4" />
+                            class="bg-surface-1 rounded-pill mt-4" />
                         <div
                             :style="subtitleSection2"
-                            class="bg-surface-3 rounded-pill mt-1" />
+                            class="bg-surface-1 rounded-pill mt-1" />
                     </div>
                     <VCard
                         rounded="xl"
-                        color="surface-4"
+                        color="surface-2"
                         class="w-100"
                         :height="799"></VCard>
                 </VCard>

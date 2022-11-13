@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useDisplay, useLocale } from 'vuetify/lib/framework.mjs';
+import { useDisplay } from 'vuetify/lib/framework.mjs';
 
-import Interact from '@/components/material-3/interact/Interact.vue';
+import Interact from '@/components/interact/Interact.vue';
 
-import * as baseStyles from '@/styles/styles.css';
+import { useLocalizeTranslate } from '@/locales/localize-translate';
 
 const display = useDisplay();
 
-const { t } = useLocale();
+const { t } = useLocalizeTranslate('home');
 
 const welcomeWord = computed(() => {
     const welcomeWords = [
@@ -47,24 +47,28 @@ const welcomeWord = computed(() => {
 </script>
 
 <template>
-    <VCard class="pa-3">
+    <VCard
+        class="pa-3"
+        color="surface-variant">
         <div
             :class="`${display.xs.value ? 'text-h3' : 'text-h2'}`"
             class="font-weight-bold mb-4"
             v-text="welcomeWord" />
         <div>
-            {{ t('$vuetify.pages.home.bio.messageMe') }}
+            {{ t('bio.messageMe') }}
             <div class="ma-2" />
-            {{ t('$vuetify.pages.home.bio.messageGoal') }}
+            {{ t('bio.messageGoal') }}
         </div>
         <div class="mt-4 mb-2">
-            <Interact v-slot="{ isInteracted }" :is-inline-box-container="true">
+            <Interact
+                v-slot="{ isInteracted }"
+                :is-inline-box-container="true">
                 <VBtn
                     to="/about"
                     append-icon="arrow_right_alt"
-                    :style="baseStyles.borderRadiusTransition"
+                    class="border-radius-transition"
                     :rounded="isInteracted ? 'sm' : 'elg'">
-                    {{ t('$vuetify.pages.home.bio.action') }}
+                    {{ t('bio.action') }}
                 </VBtn>
             </Interact>
         </div>

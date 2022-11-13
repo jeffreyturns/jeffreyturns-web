@@ -3,13 +3,12 @@ import { mergeProps, ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 import { useLocale } from 'vuetify/lib/framework.mjs';
-import { useAppTitle } from '@/composables/useAppTitle';
+import { useAppTitle } from '@/composables/title';
 
 import { menu as menuConfig } from '@/common/components-config';
-import { Language, changeLocale, LANGUAGE_VALUES } from '@/composables/useLocaleManager';
+import { Language, changeLocale, LANGUAGE_VALUES } from '@/composables/locale';
 
-import * as baseStyles from '@/styles/styles.css';
-import Interact from '@/components/material-3/interact/Interact.vue';
+import Interact from '@/components/interact/Interact.vue';
 
 const locale = useLocale();
 const route = useRoute();
@@ -38,13 +37,14 @@ function change(value: Language) {
                             v-slot="{ isInteracted }"
                             :is-inline-box-container="true">
                             <VBtn
-                                class="ms-1"
+                                class="ms-1 universal-transition"
                                 :rounded="isInteracted ? 'md' : 'full'"
-                                :style="baseStyles.borderRadiusTransition"
-                                icon="translate"
+                                icon
                                 :class="[isHovering ? 'md-sym-to-600' : 'md-sym-to-400']"
                                 :color="model ? 'primary' : 'on-surface'"
-                                v-bind="mergeProps(props, menu, tooltip)" />
+                                v-bind="mergeProps(props, menu, tooltip)">
+                                <VIcon :class="model ? 'primary' : isHovering ? 'on-surface' : 'on-surface-variant'">translate</VIcon>
+                            </VBtn>
                         </Interact>
                     </VHover>
                 </template>

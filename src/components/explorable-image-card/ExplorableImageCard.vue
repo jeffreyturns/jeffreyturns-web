@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import * as baseStyles from '@/styles/styles.css';
 import { useLocale } from 'vuetify/lib/framework.mjs';
 
 interface EntryProps {
@@ -27,11 +26,10 @@ const compProps = defineProps<ExplorableImageCardProps>();
 <template>
     <VHover v-slot="{ isHovering, props }">
         <VCard
-            :style="baseStyles.borderRadiusTransition"
             v-bind="props"
             :rounded="isHovering ? 'sm' : 'elg'"
             :height="250"
-            class="mx-1">
+            class="mx-1 border-radius-transition">
             <VImg
                 cover
                 :lazy-src="require('@/assets/placeholder.svg')"

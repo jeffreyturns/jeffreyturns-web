@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
-import { useScroll } from '@/composables/useScroll';
+import { useScroll } from '@/composables/scroll';
 
 interface ScollContainerProps {
     isFluid?: boolean;

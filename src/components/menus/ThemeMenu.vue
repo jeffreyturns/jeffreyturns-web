@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import { mergeProps, ref } from 'vue';
 
-import { getPrefTheme, setPrefTheme, Theme, toThemeEnums, useThemeManager, THEME_VALUES } from '@/composables/useThemeManager';
+import { getPrefTheme, setPrefTheme, Theme, toThemeEnums, useThemeManager, THEME_VALUES } from '@/composables/theme';
 
 import { useLocale, useTheme as useFrameworkTheme } from 'vuetify/lib/framework.mjs';
 
 import { menu as menuConfig } from '@/common/components-config';
 
-import * as baseStyles from '@/styles/styles.css';
-
-import Interact from '@/components/material-3/interact/Interact.vue';
+import Interact from '@/components/interact/Interact.vue';
 
 const fmTheme = useFrameworkTheme();
 const { t } = useLocale();
@@ -57,13 +55,14 @@ function change(value: Theme) {
                             v-slot="{ isInteracted }"
                             :is-inline-box-container="true">
                             <VBtn
-                                class="ms-1"
+                                class="ms-1 universal-transition"
                                 :rounded="isInteracted ? 'md' : 'full'"
-                                :style="baseStyles.borderRadiusTransition"
-                                :icon="getIcon()"
+                                icon
                                 :class="[isHovering ? 'md-sym-to-600' : 'md-sym-to-400']"
                                 :color="model ? 'primary' : 'on-surface'"
-                                v-bind="mergeProps(props, menu, tooltip)" />
+                                v-bind="mergeProps(props, menu, tooltip)">
+                                <VIcon :class="model ? 'primary' : isHovering ? 'on-surface' : 'on-surface-variant'">{{ getIcon() }}</VIcon>
+                            </VBtn>
                         </Interact>
                     </VHover>
                 </template>

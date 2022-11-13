@@ -1,0 +1,52 @@
+@import './_animations';
+
+$symbol-timing-duration: 200ms;
+$symbol-cubic-bezier: cubic-bezier(0.2, 0, 0, 1);
+
+.md-sym-to-600 {
+  font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+  animation: md3-symbol-400-600 $symbol-timing-duration $symbol-cubic-bezier;
+}
+
+.md-sym-to-400 {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  animation: md3-symbol-600-400 $symbol-timing-duration $symbol-cubic-bezier;
+}
+
+.filled-symbol {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.outlined-symbol {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.to-filled-symbol {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  animation: md3-symbol-to-filled $symbol-timing-duration $symbol-cubic-bezier;
+}
+.to-outlined-symbol {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  animation: md3-symbol-to-outlined $symbol-timing-duration $symbol-cubic-bezier;
+}
+
+$transition-timing-change: 300ms;
+$transition-cubic-bezier: cubic-bezier(0.2, 0, 0, 1);
+
+.all-color-transition {
+  transition: all $transition-timing-change $transition-cubic-bezier !important;
+}
+
+.bg-color-transition {
+  transition: background-color $transition-timing-change
+    $transition-cubic-bezier !important;
+}
+
+.border-radius-transition {
+  transition: border-radius $transition-timing-change $transition-cubic-bezier !important;
+}
+
+.universal-transition {
+  transition: background-color $transition-timing-change
+      $transition-cubic-bezier,
+    border-radius $transition-timing-change $transition-cubic-bezier !important;
+}

@@ -3,7 +3,12 @@ import { useGlobalStore } from '@/stores/global';
 
 export type MethodType = 'GET';
 
-export async function httpJson<T>(path: string, meta: { method: MethodType } = { method: 'GET' }): Promise<T> {
+export interface RequestMeta {
+    path: string;
+    method: MethodType;
+}
+
+export async function request<T>(meta: RequestMeta): Promise<T> {
     const global = useGlobalStore();
 
     let data;
@@ -15,7 +20,7 @@ export async function httpJson<T>(path: string, meta: { method: MethodType } = {
     });
 
     try {
-        const request = await http(path, {
+        const request = await http(meta.path, {
             method: meta.method
         }).then(responseHandler);
 
@@ -28,7 +33,7 @@ export async function httpJson<T>(path: string, meta: { method: MethodType } = {
     return data as T;
 }
 
-export async function httpText(path: string, meta: { method: MethodType } = { method: 'GET' }): Promise<string> {
+export async function requestRaw(meta: RequestMeta): Promise<string> {
     const global = useGlobalStore();
 
     let data;
@@ -40,7 +45,7 @@ export async function httpText(path: string, meta: { method: MethodType } = { me
     });
 
     try {
-        const request = await http(path, {
+        const request = await http(meta.path, {
             method: meta.method
         }).then(responseHandler);
 

@@ -46,31 +46,31 @@ const chip: CSSProperties = {
         :style="card"
         class="ma-1 bg-surface-1 rounded-lg">
         <div
-            class="bg-surface-4 rounded-lg"
+            class="bg-surface-variant rounded-lg"
             :style="image"></div>
         <VCardItem>
             <div
                 :style="title"
-                class="bg-surface-4 rounded-pill" />
+                class="bg-surface-variant rounded-pill" />
         </VCardItem>
 
         <div
             :style="description1"
-            class="bg-surface-4 rounded-pill ms-4" />
+            class="bg-surface-variant rounded-pill ms-4" />
         <div
             :style="description2"
-            class="bg-surface-4 rounded-pill ms-4 mt-1 mb-1" />
+            class="bg-surface-variant rounded-pill ms-4 mt-1 mb-1" />
 
         <VCardActions class="ms-2">
             <div
                 :style="chip"
-                class="bg-surface-4 rounded-lg me-1" />
+                class="bg-surface-variant rounded-lg me-1" />
             <div
                 :style="chip"
-                class="bg-surface-4 rounded-lg me-1" />
+                class="bg-surface-variant rounded-lg me-1" />
             <div
                 :style="chip"
-                class="bg-surface-4 rounded-lg" />
+                class="bg-surface-variant rounded-lg" />
         </VCardActions>
     </div>
 </template>

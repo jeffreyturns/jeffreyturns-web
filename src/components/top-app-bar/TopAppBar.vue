@@ -6,12 +6,12 @@ import IndeterminateLoader from '@/components/indeterminate-loader/Indeterminate
 import SearchBox from '@/components/top-app-bar/search-box/SearchBox.vue';
 import ThemeMenu from '@/components/menus/ThemeMenu.vue';
 import LocaleMenu from '@/components/menus/LocaleMenu.vue';
-import Interact from '@/components/material-3/interact/Interact.vue';
+import Interact from '@/components/interact/Interact.vue';
 
 import { useGlobalStore } from '@/stores/global';
 import { useScrollStore } from '@/stores/scroll';
+// import { useSnack } from '@/composables/snack';
 
-import * as baseStyles from '@/styles/styles.css';
 import { useDisplay, useLocale } from 'vuetify/lib/framework.mjs';
 
 const globalStore = useGlobalStore();
@@ -19,6 +19,7 @@ const scrollStore = useScrollStore();
 
 const route = useRoute();
 const locale = useLocale();
+// const snack = useSnack();
 const router = useRouter();
 const display = useDisplay();
 
@@ -37,7 +38,7 @@ function goBack(): void {
     <VAppBar
         app
         :color="elevationColor()"
-        :style="baseStyles.bgColorTransition">
+        class="bg-color-transition">
         <VHover v-slot="{ isHovering, props }">
             <Interact
                 v-slot="{ isInteracted }"
@@ -45,7 +46,7 @@ function goBack(): void {
                 <VAppBarNavIcon
                     v-if="!rootDestonation && !display.lgAndUp.value"
                     :rounded="isInteracted ? 'md' : 'full'"
-                    :style="baseStyles.borderRadiusTransition"
+                    class="border-radius-transition"
                     :class="[isHovering ? 'md-sym-to-600' : 'md-sym-to-400']"
                     @click="goBack()"
                     icon="arrow_back"
@@ -62,7 +63,7 @@ function goBack(): void {
                     v-if="!display.xs.value && !display.lgAndUp.value && rootDestonation"
                     @click="globalStore.rail = true"
                     :rounded="isInteracted ? 'md' : 'full'"
-                    :style="baseStyles.borderRadiusTransition"
+                    class="border-radius-transition"
                     :class="[isHovering ? 'md-sym-to-600' : 'md-sym-to-400']"
                     icon="menu"
                     color="on-surface"
@@ -89,12 +90,12 @@ function goBack(): void {
             <!-- <VBtn
                 @click="
                     () => {
-                        snack({
+                        snack.snack({
                             message: 'This site is still in beta. Report about bugs on GitHub.',
                             action: {
                                 title: 'OK',
                                 action: () => {
-                                    snackStore.dismiss();
+                                    snack.dismiss();
                                 }
                             }
                         });
@@ -102,15 +103,13 @@ function goBack(): void {
                 "
                 prepend-icon="pest_control"
                 variant="flat"
-                color="state-info"
+                color="state-error"
                 class="mx-1">
                 Beta
             </VBtn> -->
-
             <ThemeMenu />
             <LocaleMenu />
         </div>
-
         <div
             v-if="display.xs.value && !globalStore.showSearch"
             class="mx-2">

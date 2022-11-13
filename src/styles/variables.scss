@@ -1,6 +1,6 @@
 $override-font: 'Inter', sans-serif;
 
-@use "vuetify/styles" with (
+@use 'vuetify/styles' with (
     $button-text-transform: none,
     $navigation-drawer-border-color: transparent,
     $body-font-family: $override-font,

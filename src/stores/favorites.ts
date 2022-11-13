@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 
 import { defineStore } from 'pinia';
-import { httpJson } from '@/api/base';
+import { getFavorites } from '@/api/reqests';
 
 export type Path = string;
 
@@ -33,7 +33,7 @@ export const useFavoritesStore = defineStore('favorites', () => {
     async function fetchData() {
         if (isLoaded()) return;
 
-        const data = await httpJson<ProjectPreview[]>('/projects?favorite=true');
+        const data = await getFavorites();
         state.value.items = data;
     }
 

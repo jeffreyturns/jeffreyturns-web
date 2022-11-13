@@ -54,7 +54,7 @@ watch(
 );
 
 function openSaveLife(): void {
-    window.open('https://savelife.in.ua/');
+    window.open('https://savelife.in.ua/donate');
 }
 </script>
 
@@ -70,7 +70,7 @@ function openSaveLife(): void {
                     <div
                         :class="`${display.xs.value ? 'text-h6' : 'text-h5'}`"
                         class="mb-4 text-medium-emphasis"
-                        v-text="t('$vuetify.pages.about.subtitleHeader')"  />
+                        v-text="t('$vuetify.pages.about.subtitleHeader')" />
                 </div>
             </VCol>
             <VCol>

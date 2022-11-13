@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { ProjectPreview } from '@/stores/favorites';
 
-import Interact from '@/components/material-3/interact/Interact.vue';
-
-import * as baseStyles from '@/styles/styles.css';
+import Interact from '@/components/interact/Interact.vue';
 
 interface ProjectCardProps {
     entry: ProjectPreview;
@@ -37,23 +35,24 @@ function chipColor(title: string) {
 
 <template>
     <VHover v-slot="{ isHovering, props }">
-        <Interact v-slot="{ isInteracted }" class="ma-1">
+        <Interact
+            v-slot="{ isInteracted }"
+            class="ma-1">
             <VCard
                 :to="`/project/${compProps.entry.project}`"
                 v-bind="props"
                 v-ripple
-                :style="baseStyles.allTransition"
                 :rounded="isInteracted ? 'elg' : 'lg'"
                 :color="isHovering ? 'secondary-container' : 'surface-2'"
+                class="universal-transition"
                 width="400px"
                 height="360px">
                 <VImg
                     gradient="to bottom, rgba(0,0,0,.009), rgba(0,0,0,.2)"
-                    class="rounded-lg bordered-alpha"
+                    class="universal-transition"
                     :aspect-ratio="2 / 1"
                     cover
                     :class="[isHovering ? 'setScale' : 'resetScale', isInteracted ? 'rounded-elg' : 'rounded-lg']"
-                    :style="baseStyles.borderRadiusTransition"
                     :lazy-src="require('@/assets/placeholder.svg')"
                     :src="`https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/${compProps.entry.preview}`" />
                 <VCardItem>

@@ -27,6 +27,7 @@ function scrollToTop() {
             color="primary-container"
             icon="vertical_align_top"
             size="large"
+            rounded="lg"
             :class="{ fab: isRootPage }"
             class="me-4 mb-4 text-on-primary-container"
             @click="() => scrollToTop()" />

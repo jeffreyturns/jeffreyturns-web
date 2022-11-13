@@ -3,12 +3,11 @@ import { RouteLocationRaw, useRoute, useRouter } from 'vue-router';
 import { useDisplay, useLocale } from 'vuetify/lib/framework.mjs';
 
 import RailLogo from '@/components/scaffold/navigation-rail/rail-logo/RailLogo.vue';
-import Interact from '@/components/material-3/interact/Interact.vue';
+import Interact from '@/components/interact/Interact.vue';
 
 import { NAVIGATION_ITEMS } from '@/stores/global';
 
 import * as styles from './navigation-rail.css';
-import * as baseStyles from '@/styles/styles.css';
 
 import { useGlobalStore } from '@/stores/global';
 
@@ -80,7 +79,7 @@ function navigate(path: RouteLocationRaw): void {
                         v-if="!rootDestonation() && !display.mdAndDown.value"
                         @click="goBack()"
                         :rounded="isInteracted ? 'md' : 'full'"
-                        :style="baseStyles.borderRadiusTransition"
+                        class="border-radius-transition"
                         :class="[isHovering ? 'md-sym-to-600' : 'md-sym-to-400']"
                         v-bind="props"
                         icon="arrow_back"
@@ -90,8 +89,9 @@ function navigate(path: RouteLocationRaw): void {
                         v-if="rootDestonation() && !display.mdAndDown.value"
                         color="transparent"
                         :rounded="isInteracted ? 'md' : 'full'"
-                        :style="baseStyles.borderRadiusTransition"
+                        class="border-radius-transition"
                         v-bind="props"
+                        v-ripple="{ class: 'text-primary' }"
                         @click="goHome()">
                         <RailLogo />
                     </VAppBarNavIcon>
@@ -101,7 +101,7 @@ function navigate(path: RouteLocationRaw): void {
                         @click="globalStore.rail = !globalStore.rail"
                         variant="text"
                         :rounded="isInteracted ? 'md' : 'full'"
-                        :style="baseStyles.borderRadiusTransition"
+                        class="border-radius-transition"
                         :class="[isHovering ? 'md-sym-to-600' : 'md-sym-to-400']"
                         v-bind="props"
                         color="on-surface"
@@ -124,9 +124,10 @@ function navigate(path: RouteLocationRaw): void {
                             :height="railListItemHeight()"
                             :style="
                                 display.xlAndUp.value || display.mdAndDown.value
-                                    ? baseStyles.allTransition
+                                    ? 'bg-color-transition'
                                     : ['justify-self: center; justify-content: center;']
                             "
+                            v-bind="props"
                             :density="railDensity()"
                             :value="item"
                             elevation="0"

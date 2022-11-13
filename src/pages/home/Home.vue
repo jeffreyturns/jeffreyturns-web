@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
+import { useFavoritesStore } from '@/stores/favorites';
+import { useLocalizeTranslate } from '@/locales/localize-translate';
+import { useDisplay } from 'vuetify/lib/framework.mjs';
+
+import ProjectCard from '@/components/project/project-card/ProjectCard.vue';
+import ProjectCardSkeleton from '@/components/project/project-card/ProjectCardSkeleton.vue';
 import Banner from '@/components/banners/banner/Banner.vue';
 import ExplorableImageCard from '@/components/explorable-image-card/ExplorableImageCard.vue';
-
-import { useFavoritesStore } from '@/stores/favorites';
-import ProjectCard from '@/components/project/project-card/ProjectCard.vue';
-import { useLocale, useDisplay } from 'vuetify/lib/framework.mjs';
-import ProjectCardSkeleton from '@/components/project/project-card/ProjectCardSkeleton.vue';
-
 import BioCard from '@/components/bio-card/BioCard.vue';
 
 export type RowColsArray = (number | undefined)[];
 
 const favoritesStore = useFavoritesStore();
 const display = useDisplay();
-const { t } = useLocale();
+const { t } = useLocalizeTranslate('home');
 
 onMounted(() => {
     favoritesStore.fetchData();
@@ -25,40 +25,40 @@ const collectionRow: RowColsArray = [4, 2, 6];
 
 const collection = [
     {
-        isPaint: true,
+        isPaint: false,
         image: {
-            title: 'Cloud Space',
-            url: 'https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/headers/image_4.png'
+            title: 'Matsuyama, Japan',
+            url: 'https://images.unsplash.com/photo-1644925745420-4cad6fc393f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+        },
+        button: {
+            title: '$vuetify.common.explore',
+            url: 'https://unsplash.com/photos/PZnzcKJ-KYI',
+            isRouterPath: false
         }
-        // button: {
-        //     title: '$vuetify.common.explore',
-        //     url: '/collections/imagination',
-        //     isRouterPath: true
-        // }
     },
     {
-        isPaint: true,
+        isPaint: false,
         image: {
-            title: 'Sun Collpase',
-            url: 'https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/headers/image_2.png'
+            title: 'Matsuyama, Japan',
+            url: 'https://images.unsplash.com/photo-1653092331744-4072328aea2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80'
+        },
+        button: {
+            title: '$vuetify.common.explore',
+            url: 'https://unsplash.com/photos/r_TNGZ6UaW0',
+            isRouterPath: false
         }
-        // button: {
-        //     title: '$vuetify.common.explore',
-        //     url: '/collections/imagination',
-        //     isRouterPath: true
-        // }
     },
     {
-        isPaint: true,
+        isPaint: false,
         image: {
-            title: 'Undiscovered Flower',
-            url: 'https://raw.githubusercontent.com/Jeffrey01596/jeffreyturns/main/static/headers/image_1.png'
+            title: 'Matsuyama, Japan',
+            url: 'https://images.unsplash.com/photo-1653496630706-282c6fdd8de0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+        },
+        button: {
+            title: '$vuetify.common.explore',
+            url: 'https://unsplash.com/photos/p5-smbiZlQE',
+            isRouterPath: false
         }
-        // button: {
-        //     title: '$vuetify.common.explore',
-        //     url: '/collections/imagination',
-        //     isRouterPath: true
-        // }
     }
 ];
 </script>
@@ -84,12 +84,11 @@ const collection = [
                         class="font-weight-thin">
                         <i
                             class="font-weight-medium"
-                            v-text="t('$vuetify.pages.home.quote.first')" />
-                        {{ t('$vuetify.pages.home.quote.second') }}
+                            v-text="t('quote.first')" />
+                        {{ t('quote.second') }}
                         <i
                             class="font-weight-medium"
-                            v-text="t('$vuetify.pages.home.quote.third')" />
-                        <!-- <i class="text-h6"> 一 Seishuu Handa</i> -->
+                            v-text="t('quote.third')" />
                     </div>
                     <VRow
                         no-gutters
@@ -112,7 +111,7 @@ const collection = [
         <VContainer class="text-center">
             <div
                 class="text-h4 font-weight-medium"
-                v-text="t('$vuetify.pages.home.favoriteProjects')" />
+                v-text="t('favoriteProjects')" />
         </VContainer>
         <VContainer
             full-height
