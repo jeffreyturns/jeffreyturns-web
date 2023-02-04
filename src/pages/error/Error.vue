@@ -19,12 +19,12 @@ function goHome(): void {
         title="Something went wrong!"
         message="Refresh the page or try again later.">
         <div>
-            <VBtn
+            <FilledBtn
                 @click="goHome()"
                 class="mx-1">
                 Go Home
-            </VBtn>
-            <VBtn class="mx-1 mx-1 bg-secondary-container text-on-secondary-container">View Log</VBtn>
+            </FilledBtn>
+            <OutlinedBtn class="mx-1 mx-1">View Log</OutlinedBtn>
         </div>
     </MessageBanner>
 </template>

@@ -1,14 +1,17 @@
 import en from '@/locales/en';
 import ua from '@/locales/ua';
 
-import { aliases, symbol } from '@/iconsets/symbols';
+import { aliases as alias, symbol } from '@/iconsets/symbols';
 
 import { themeFromSeed } from '@/core/theme/app-schemes';
 import { THEME_SEED } from '@/common/constants';
 
+import { aliasComponents } from './components-config';
+
 const generatedTheme = themeFromSeed(THEME_SEED);
 
 export const components = {
+    ...aliasComponents,
     VAppBar: {
         flat: true,
         color: 'surface-2'
@@ -20,7 +23,6 @@ export const components = {
         color: 'primary'
     },
     VBtn: {
-        color: 'primary',
         rounded: 'xl',
         elevation: '0'
     },
@@ -120,7 +122,7 @@ export const locale = {
 
 export const iconset = {
     defaultSet: 'symbol',
-    aliases,
+    alias,
     sets: {
         symbol
     }

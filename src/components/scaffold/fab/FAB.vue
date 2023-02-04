@@ -19,18 +19,14 @@ function scrollToTop() {
 
 <template>
     <transition name="scale-transition">
-        <VBtn
+        <FABBtn
             v-show="scrollStore.getIsTopFABVisible()"
             position="fixed"
             location="bottom right"
-            elevation="1"
-            color="primary-container"
             icon="vertical_align_top"
-            size="large"
-            rounded="lg"
             :class="{ fab: isRootPage }"
-            class="me-4 mb-4 text-on-primary-container"
-            @click="() => scrollToTop()" />
+            class="me-4 mb-4"
+            @click="scrollToTop()" />
     </transition>
 </template>
 

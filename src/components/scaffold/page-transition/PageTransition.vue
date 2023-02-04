@@ -19,7 +19,7 @@ const _transition = ref<string>('');
 onMounted(() => {
     router.beforeEach((to, from, next) => {
         const isSameTransition = to.meta.transition != from.meta.transition;
-        // undefined is default slide-y transition? som this is normal
+        // undefined is default slide-y transition? so this is normal
         const isSlideXTransitionBack = to.meta.transition === undefined && from.meta.transition == 'slide-x';
         _transition.value = isSlideXTransitionBack ? 'slide-x-reverse' : isSameTransition ? 'slide-x' : 'slide-y';
 

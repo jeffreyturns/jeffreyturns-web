@@ -61,16 +61,19 @@ const collection = [
         }
     }
 ];
+
+const isBirthDay = (): boolean => new Date().toDateString() === new Date(`${new Date().getFullYear()}-05-05`).toDateString();
 </script>
 
 <template>
     <div>
         <Banner
-            v-if="false"
+            v-if="isBirthDay()"
             state="warning"
-            type="normal"
-            text="Page under building."
-            :dismissible="true" />
+            type="bold"
+            :is-rainbow="true"
+            text="🍰🕯️🎈 Happy birthday, Jeffrey Turns!"
+            :dismissible="!isBirthDay()" />
 
         <VContainer fluid>
             <VRow

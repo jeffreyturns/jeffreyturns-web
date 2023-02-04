@@ -52,10 +52,6 @@ watch(
 
     { immediate: true, deep: true }
 );
-
-function openSaveLife(): void {
-    window.open('https://savelife.in.ua/donate');
-}
 </script>
 
 <template>
@@ -111,19 +107,23 @@ function openSaveLife(): void {
                         class="text-body-1 mt-1"
                         v-text="it.text" />
                 </VCard>
-                <VBtn
+                <TonalBtn
                     v-for="it in links"
                     :key="it.title"
                     :href="it.url"
                     class="me-2 my-4">
                     {{ it.title }}
-                </VBtn>
-                <div
-                    class="text-center text-h6 text-decoration-underline text-primary"
-                    role="button"
-                    @click="openSaveLife()">
-                    #GloryToUkraine
-                </div>
+                </TonalBtn>
+                <!-- <Carusel />
+                <div class="text-center my-4">
+                    <TonalBtn
+                        prepend-icon="savings"
+                        append-icon="arrow_right_alt"
+                        href="https://savelife.in.ua/en/donate-en/"
+                        target="_blank">
+                        Make a donation
+                    </TonalBtn>
+                </div> -->
             </VCol>
         </VRow>
     </VContainer>

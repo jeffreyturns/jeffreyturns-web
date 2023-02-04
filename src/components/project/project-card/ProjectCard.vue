@@ -38,7 +38,7 @@ function chipColor(title: string) {
         <Interact
             v-slot="{ isInteracted }"
             class="ma-1">
-            <VCard
+            <FilledCard
                 :to="`/project/${compProps.entry.project}`"
                 v-bind="props"
                 v-ripple
@@ -77,7 +77,7 @@ function chipColor(title: string) {
                         {{ it }}
                     </VChip>
                 </VCardActions>
-            </VCard>
+            </FilledCard>
         </Interact>
     </VHover>
 </template>

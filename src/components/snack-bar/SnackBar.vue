@@ -55,13 +55,12 @@ watch(
         <template
             v-slot:actions
             v-if="action">
-            <VBtn
+            <TextBtn
                 v-ripple
                 color="inverse-primary"
-                variant="text"
                 @click="invokeAction()">
                 {{ t(actionTitle) }}
-            </VBtn>
+            </TextBtn>
         </template>
     </VSnackbar>
 </template>

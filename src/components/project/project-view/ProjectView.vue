@@ -39,13 +39,13 @@ const props = withDefaults(defineProps<ProjectViewProps>(), {
                         <div
                             class="my-2"
                             v-text="`Download from:`" />
-                        <VBtn
+                        <FilledBtn
                             class="me-1"
                             v-for="(it, i) in props.entry.download"
                             :key="i"
                             :href="it.url">
                             {{ it.title }}
-                        </VBtn>
+                        </FilledBtn>
                     </div>
                 </VCard>
             </VCol>

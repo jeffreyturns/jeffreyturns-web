@@ -1,12 +1,12 @@
 import { useLocale } from 'vuetify/lib/framework.mjs';
 
 export function useLocalizeTranslate(pageName: string = '') {
-    function t(path: string): string {
+    function t(key: string, ...params: unknown[]): string {
         const { t } = useLocale();
 
-        const pagePath: string = pageName == '' ? `$vuetify.${path}` : `$vuetify.pages.${pageName}.${path}`;
+        const pagePath: string = pageName == '' ? `$vuetify.${key}` : `$vuetify.pages.${pageName}.${key}`;
 
-        return t(pagePath);
+        return t(pagePath, ...params);
     }
 
     return {

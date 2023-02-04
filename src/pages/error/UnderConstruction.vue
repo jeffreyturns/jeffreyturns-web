@@ -21,12 +21,12 @@ function goHome(): void {
         :title="t('$vuetify.pages.underConstruction.title')"
         :message="t('$vuetify.pages.underConstruction.subtitle')">
         <div>
-            <VBtn
+            <FilledBtn
                 @click="goHome()"
                 append-icon="arrow_right_alt"
                 class="mx-1">
                 {{ t('$vuetify.pages.underConstruction.action.goHome') }}
-            </VBtn>
+            </FilledBtn>
         </div>
     </MessageBanner>
 </template>

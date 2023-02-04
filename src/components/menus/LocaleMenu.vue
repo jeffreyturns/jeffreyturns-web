@@ -36,15 +36,14 @@ function change(value: Language) {
                         <Interact
                             v-slot="{ isInteracted }"
                             :is-inline-box-container="true">
-                            <VBtn
+                            <TextIconBtn
                                 class="ms-1 universal-transition"
                                 :rounded="isInteracted ? 'md' : 'full'"
-                                icon
                                 :class="[isHovering ? 'md-sym-to-600' : 'md-sym-to-400']"
                                 :color="model ? 'primary' : 'on-surface'"
                                 v-bind="mergeProps(props, menu, tooltip)">
                                 <VIcon :class="model ? 'primary' : isHovering ? 'on-surface' : 'on-surface-variant'">translate</VIcon>
-                            </VBtn>
+                            </TextIconBtn>
                         </Interact>
                     </VHover>
                 </template>
@@ -56,7 +55,7 @@ function change(value: Language) {
                 <VListItem
                     v-for="(it, i) in LANGUAGE_VALUES"
                     :key="i"
-                    :prepend-icon="locale.current.value == it.value ? 'done' : ' '"
+                    :prepend-icon="locale.current.value == it.value ? 'done' : 'ㅤ'"
                     @click="change(it.value)"
                     :value="i">
                     <VListItemTitle v-text="it.title" />

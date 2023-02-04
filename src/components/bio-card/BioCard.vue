@@ -10,6 +10,11 @@ const display = useDisplay();
 
 const { t } = useLocalizeTranslate('home');
 
+const yearSince = computed((): number => {
+    const age = new Date(new Date().getTime() - new Date(2003, 5, 5).getTime());
+    return Math.abs(age.getUTCFullYear() - 1970);
+});
+
 const welcomeWord = computed(() => {
     const welcomeWords = [
         'Welcome',
@@ -47,15 +52,13 @@ const welcomeWord = computed(() => {
 </script>
 
 <template>
-    <VCard
-        class="pa-3"
-        color="surface-variant">
+    <FilledCard class="pa-3">
         <div
             :class="`${display.xs.value ? 'text-h3' : 'text-h2'}`"
             class="font-weight-bold mb-4"
             v-text="welcomeWord" />
         <div>
-            {{ t('bio.messageMe') }}
+            {{ t('bio.messageMe', [yearSince]) }}
             <div class="ma-2" />
             {{ t('bio.messageGoal') }}
         </div>
@@ -63,14 +66,14 @@ const welcomeWord = computed(() => {
             <Interact
                 v-slot="{ isInteracted }"
                 :is-inline-box-container="true">
-                <VBtn
+                <FilledBtn
                     to="/about"
                     append-icon="arrow_right_alt"
                     class="border-radius-transition"
                     :rounded="isInteracted ? 'sm' : 'elg'">
                     {{ t('bio.action') }}
-                </VBtn>
+                </FilledBtn>
             </Interact>
         </div>
-    </VCard>
+    </FilledCard>
 </template>

@@ -44,14 +44,13 @@ const currentYear = () => new Date().getFullYear();
                 <VCol
                     :cols="12"
                     class="text-center">
-                    <VBtn
+                    <TextBtn
                         v-for="it in links"
                         :key="it.title"
                         :href="it.url"
-                        variant="text"
                         class="mx-2">
                         {{ it.title }}
-                    </VBtn>
+                    </TextBtn>
                 </VCol>
                 <WaveDividerFooter class="my-4" />
                 <VCol

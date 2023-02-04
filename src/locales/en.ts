@@ -56,7 +56,7 @@ export default {
                 third: 'beauty.'
             },
             bio: {
-                messageMe: 'I’m Jeffrey Turns, a 19-year-old developer and UI/UX designer from Ukraine. Right now I am studying as computer engineer.',
+                messageMe: 'I’m Jeffrey Turns, a {0}-year-old developer and UI/UX designer from Ukraine. Right now I am studying as computer engineer.',
                 messageGoal: 'My goal is to create solutions that combine Google latest design guidelines and modern and innovative digital technologies.',
                 action: 'More'
             },

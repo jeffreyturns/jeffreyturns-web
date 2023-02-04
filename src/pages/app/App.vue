@@ -41,14 +41,6 @@ const globalStore = useGlobalStore();
 const showSearchAtRoutes = ['search'];
 const pageUnderConstruction = ['privacy policy', 'collections'];
 
-const scrollToTop = () => {
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
-};
-
 watch(
     () => route,
     value => {
@@ -61,8 +53,6 @@ watch(
         globalStore.pageState.isUnderBuilding = inRouteRecord(value.name?.toString() || '', pageUnderConstruction);
 
         globalStore.resetStates();
-
-        scrollToTop();
     },
     { immediate: true, deep: true }
 );

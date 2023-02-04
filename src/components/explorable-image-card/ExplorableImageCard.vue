@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useLocale } from 'vuetify/lib/framework.mjs';
+import Interact from '@/components/interact/Interact.vue';
 
 interface EntryProps {
     isPaint: boolean;
@@ -47,13 +48,20 @@ const compProps = defineProps<ExplorableImageCardProps>();
                             <div class="text-white text-subtitle-1 mb-3 font-weight-medium">
                                 {{ compProps.entry?.isPaint ? `"${compProps.entry?.image.title}"` : compProps.entry?.image.title }}
                             </div>
-                            <VBtn
-                                v-if="compProps.entry?.button != null"
-                                color="white"
-                                :to="compProps.entry?.button.isRouterPath ? compProps.entry?.button.url : undefined"
-                                :href="!compProps.entry?.button.isRouterPath ? compProps.entry?.button.url : undefined">
-                                {{ t(compProps.entry?.button.title) }}
-                            </VBtn>
+                            <Interact
+                                v-if="entry?.button"
+                                v-slot="{ isInteracted }"
+                                :is-inline-box-container="true">
+                                <FilledBtn
+                                    v-if="compProps.entry?.button != null"
+                                    color="white"
+                                    :rounded="isInteracted ? 'sm' : 'elg'"
+                                    class="border-radius-transition"
+                                    :to="compProps.entry?.button.isRouterPath ? compProps.entry?.button.url : undefined"
+                                    :href="!compProps.entry?.button.isRouterPath ? compProps.entry?.button.url : undefined">
+                                    {{ t(compProps.entry?.button.title) }}
+                                </FilledBtn>
+                            </Interact>
                         </div>
                     </VFadeTransition>
                 </VCard>

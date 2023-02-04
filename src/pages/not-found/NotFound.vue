@@ -34,10 +34,10 @@ function goBackAndTop(): void {
         v-if="globalStore.isNotFoundPage"
         :title="t('$vuetify.pages.notFound.title')"
         :message="t('$vuetify.pages.notFound.subtitle')">
-        <VBtn
+        <FilledBtn
             append-icon="arrow_right_alt"
             @click="goBackAndTop()">
             {{ t('$vuetify.pages.notFound.action.goBack') }}
-        </VBtn>
+        </FilledBtn>
     </MessageBanner>
 </template>
