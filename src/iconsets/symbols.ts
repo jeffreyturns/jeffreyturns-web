@@ -37,7 +37,9 @@ export const aliases: IconAliases = {
     unfold: 'unfold_more',
     file: 'attach_file',
     plus: 'add',
-    minus: 'remove'
+    minus: 'remove',
+    sortAsc: 'arrow_upward',
+    sortDesc: 'arrow_downward'
 };
 
 export const symbol: IconSet = {
