@@ -226,3 +226,68 @@ const schemeDark = (
         }
     };
 };
+
+export const whiteout: ThemeSchemes = {
+    light: schemeLight(
+        {
+            primary: '#5d5f5f',
+            onPrimary: '#ffffff',
+            primaryContainer: '#e2e2e2',
+            onPrimaryContainer: '#1a1c1c',
+            secondary: '#5f5e5e',
+            onSecondary: '#ffffff',
+            secondaryContainer: '#e4e2e1',
+            onSecondaryContainer: '#1b1c1c',
+            tertiary: '#5f5e5f',
+            onTertiary: '#ffffff',
+            tertiaryContainer: '#e5e2e2',
+            onTertiaryContainer: '#1c1b1c',
+            error: '#ba1a1a',
+            errorContainer: '#ffdad6',
+            onError: '#ffffff',
+            onErrorContainer: '#410002',
+            background: '#f6feff',
+            onBackground: '#1c1b1b',
+            surface: '#f6feff',
+            onSurface: '#1c1b1b',
+            surfaceVariant: '#e5e2e1',
+            onSurfaceVariant: '#474646',
+            outline: '#787776',
+            inverseOnSurface: '#f4f0ef',
+            inverseSurface: '#313030',
+            inversePrimary: '#c6c6c7'
+        },
+        defaultStateColors('#ffffff')
+    ),
+    dark: schemeDark(
+        {
+            primary: '#c6c6c7',
+            onPrimary: '#2f3131',
+            primaryContainer: '#454747',
+            onPrimaryContainer: '#e2e2e2',
+            secondary: '#c8c6c5',
+            onSecondary: '#303030',
+            secondaryContainer: '#474746',
+            onSecondaryContainer: '#e4e2e1',
+            tertiary: '#c9c6c7',
+            onTertiary: '#313031',
+            tertiaryContainer: '#474647',
+            onTertiaryContainer: '#e5e2e2',
+            error: '#ffb4ab',
+            errorContainer: '#690005',
+            onError: '#690005',
+            onErrorContainer: '#93000a',
+            background: '#1c1b1b',
+            onBackground: '#e5e2e1',
+            surface: '#1c1b1b',
+            onSurface: '#e5e2e1',
+            surfaceVariant: '#474646',
+            onSurfaceVariant: '#c9c6c5',
+            outline: '#929090',
+            inverseOnSurface: '#e5e2e1',
+            inverseSurface: '#313030',
+            inversePrimary: '#5d5f5f'
+        },
+        defaultStateColors('#ffffff')
+    )
+};

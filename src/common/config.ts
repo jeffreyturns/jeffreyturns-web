@@ -7,8 +7,9 @@ import { themeFromSeed } from '@/core/theme/app-schemes';
 import { THEME_SEED } from '@/common/constants';
 
 import { aliasComponents } from './components-config';
+// import { PREBUILD_THEMES } from '@/core/common/constants';
 
-const generatedTheme = themeFromSeed(THEME_SEED);
+const appTheme = themeFromSeed(THEME_SEED);
 
 export const components = {
     ...aliasComponents,
@@ -131,7 +132,7 @@ export const iconset = {
 export const theme = {
     defaultTheme: 'light',
     themes: {
-        light: generatedTheme.light,
-        dark: generatedTheme.dark
+        light: appTheme.light,
+        dark: appTheme.dark
     }
 };
