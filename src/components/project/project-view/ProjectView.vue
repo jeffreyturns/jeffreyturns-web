@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<ProjectViewProps>(), {
 </script>
 
 <template>
-    <VContainer class="fill-height">
+    <VContainer>
         <VRow>
             <VCol
                 :cols="12"
