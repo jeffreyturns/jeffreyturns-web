@@ -71,11 +71,13 @@ const isBirthDay = (): boolean => new Date().toDateString() === new Date(`${new 
             v-if="isBirthDay()"
             state="warning"
             type="bold"
-            :is-rainbow="true"
+            :is-rainbow="isBirthDay()"
             text="🍰🕯️🎈 Happy birthday, Jeffrey Turns!"
             :dismissible="!isBirthDay()" />
 
-        <VContainer fluid>
+        <VContainer
+            fluid
+            style="max-width: 2400px">
             <VRow
                 justify="center"
                 class="pt-8">
@@ -105,6 +107,7 @@ const isBirthDay = (): boolean => new Date().toDateString() === new Date(`${new 
                     </VRow>
                 </VCol>
                 <VCol
+                    style="max-width: 650px"
                     :lg="5"
                     :sm="12">
                     <BioCard />
